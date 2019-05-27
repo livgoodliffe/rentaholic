@@ -1,2 +1,18 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="card shadow-sm mb-5 col-8 p-0 m-3">
+      <%= image_tag(@item.photo, width: "400", class: "card-img-top") %>
+      <div class="card-body text-left">
+        <h5 class="card-title"><%= @item.name %></h5>
+        <p class="card-text"><%= @item.description %></p>
+      </div>
+    </div>
+    <div class="card col-3 p-0 m-3 text-left">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="card-link">Rent item</a>
+      </div>
+    </div>
+  </div>
+</div>

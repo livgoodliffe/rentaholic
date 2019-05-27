@@ -3,7 +3,7 @@
 
     <%= link_to root_path(controller: "items", query: "technology") do %>
 
-      <div class="category-card-border">
+      <div class="category-card-border <%= category.parameterize %>-border">
         <div class="category-card">
             <h3><%= category %></h3>
         </div>

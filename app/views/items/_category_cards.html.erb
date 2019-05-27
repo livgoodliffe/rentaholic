@@ -1,16 +1,16 @@
 <div class="container">
 
-  <div class="box box-1">Just a box! 😄</div>
-
-</div>
-
   <div class="d-flex flex-wrap justify-content-center">
     <% Item::CATEGORIES.each do |category| %>
       <%= link_to root_path(controller: "items", category: category) do %>
-        <div class="category-card-border">
-          <div class="category_card">
-            <h3><%= category %></h3>
+        <div class="category-card-border <%= category.parameterize %>-border">
+          <div class="category-card">
+            <div>
+            <i class="fas fa-tshirt m-3"></i>
+            <h5><%= category %></h5>
+            </div>
           </div>
+
         </div>
       <% end %>
     <% end %>

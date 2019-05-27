@@ -2,32 +2,36 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  width: 200px;
-  height: 200px;
-
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
-
   position: relative;
-
-  background: linear-gradient(100deg, $dark-pink, $light-pink);
-
   margin: 16px;
 }
 
+.fas {
+  color: $light-grey;
+  font-size: 50px;
+}
 .clothing-border {
   background: linear-gradient(100deg, $dark-pink, $light-pink);
+}
+
+.technology-border {
+  background: linear-gradient(100deg, $dark-blue, $light-blue);
+}
+
+.vehicles-border {
+  background: linear-gradient(100deg, $dark-green, $light-green);
 }
 
 .category-card {
   display: flex;
   justify-content: center;
   align-items: center;
-
   background: white;
   color: black;
-  width: 185px;
-  height: 185px;
-
+  width: 240px;
+  height: 240px;
   border-radius: 50%;
 }

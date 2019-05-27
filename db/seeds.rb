@@ -63,7 +63,7 @@ def random_item_id
 end
 
 def random_item_category
-  Item::CATEGORIES[rand(Item::CATEGORIES.length) + 1]
+  Item::CATEGORIES[rand(Item::CATEGORIES.length)]
 end
 
 def random_booking_period

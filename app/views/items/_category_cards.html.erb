@@ -6,11 +6,13 @@
 
   <div class="d-flex flex-wrap justify-content-center">
     <% Item::CATEGORIES.each do |category| %>
-    <div class="cartegory-card-border">
-      <div class="category_card">
-        <h3><%= category %></h3>
-      </div>
-    </div>
+      <%= link_to root_path(controller: "items", query: "technology") do %>
+        <div class="category-card-border">
+          <div class="category_card">
+            <h3><%= category %></h3>
+          </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>

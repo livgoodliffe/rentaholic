@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :items, only: [:index, :show]
-  resources :bookings
-
   root to: 'items#index'
+
+  resources :items, only: [:index, :show] do
+    resources :bookings
+  end
+
 end

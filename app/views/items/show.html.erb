@@ -11,7 +11,7 @@
       <div class="card-body">
         <h5 class="card-title"><%= @item.user_id %></h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="card-link">Rent item</a>
+        <%=link_to "Rent #{@item.name}", new_item_booking_path(@item.id), class: 'card-link' %>
       </div>
     </div>
   </div>

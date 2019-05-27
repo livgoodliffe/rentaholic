@@ -2,13 +2,6 @@
   <h1>Rentaholic</h1>
   <p>Stop buying stuff and get renting!</p>
 
-
-  <div class="container d-flex">
-    <% Item::CATEGORIES.each do |category| %>
-      <div class="category_card">
-        <h3><%= category %></h3>
-      </div>
-    <% end %>
-  </div>
+  <%= render "category_cards" %>
 
 </div>

@@ -22,7 +22,7 @@
         <p class="card-text">Put sone information about user? or and enquire about item form</p>
         <h5 class="card-title mt-auto">$ <%= @item.daily_rate %> per day</h5>
         <% if @item.user == current_user %>
-          This one is mine
+          <span>This one is mine</span>
         <% else %>
           <%= link_to "Rent me", new_item_booking_path(@item), class: "btn btn-success" %>
         <% end %>

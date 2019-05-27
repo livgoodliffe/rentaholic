@@ -12,7 +12,7 @@ require 'open-uri'
 PRODUCT_LIST_URL = 'https://www.randomlists.com/data/things.json'
 PRODUCT_IMAGES_URL_BASE = 'https://www.randomlists.com/img/things/'
 PRODUCT_NAMES = JSON.parse(URI.open(PRODUCT_LIST_URL).read)["RandL"]["items"]
-PRODUCT_IMAGES = PRODUCT_NAMES.map { |product| "#{PRODUCT_IMAGES_URL_BASE}#{product.tr(' ', '_')}.jpg" }
+PRODUCT_IMAGES = PRODUCT_NAMES.map { |product| "#{PRODUCT_IMAGES_URL_BASE}#{product.downcase.tr(' ', '_')}.jpg" }
 
 PRODUCT_NAMES_CAPITALIZED = PRODUCT_NAMES.map { |product| product.split.map(&:capitalize).join(' ') }
 

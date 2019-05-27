@@ -7,4 +7,9 @@ Rails.application.routes.draw do
   resources :bookings
 
   root to: 'items#index'
+
+  resources :items, only: [:index, :show] do
+    resources :bookings
+  end
+
 end

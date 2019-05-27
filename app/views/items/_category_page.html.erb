@@ -1,3 +1,18 @@
-<h1>Category Page</h1>
-
-<%=  %>
+<div class="container">
+  <h1><%= @category %></h1>
+  <div class="row">
+    <% @items.each do |item| %>
+      <div class="card mx-3" style="width: 200px">
+        <div class="card-title">
+          <%= item.name %>
+        </div>
+        <div class="card-body">
+          <%= image_tag(item.photo, size: "160x160", alt: "#{item.name}") %>
+          <div class="div mt-3">
+            Daily Rate <strong>$<%= item.daily_rate %></strong>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

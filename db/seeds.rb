@@ -88,7 +88,7 @@ end
   puts "Item create #{n+1} out of 100"
   Item.create(
     user_id: random_user_id,
-    name: JSON.parse(URI.open(NOUN_API).read).first,
+    name: JSON.parse(URI.open(NOUN_API).read).first.tr('_',' '),
     description: Faker::Lorem.paragraph(2, true, 4),
     daily_rate: rand(1..1000),
     category: random_item_category,

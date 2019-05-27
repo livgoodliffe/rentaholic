@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
+  
   CATEGORIES = [
     "Clothing",
     "Technology",
@@ -10,7 +11,6 @@ class Item < ApplicationRecord
     "Games",
     "Furniture"
   ].freeze
-
 
   belongs_to :user
 

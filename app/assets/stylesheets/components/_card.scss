@@ -1,0 +1,27 @@
+
+
+.cartegory-card-border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  width: 200px;
+  height: 200px;
+
+  border-radius: 50%;
+
+  padding: 8px;
+  position: relative;
+  background: linear-gradient(to right, $dark-blue, $light-blue);
+  padding: 3px;
+}
+
+.category-card {
+  background: white;
+  color: black;
+  width: 200px;
+  height: 200px;
+
+  border-radius: 50%;
+}

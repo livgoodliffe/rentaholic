@@ -25,6 +25,18 @@
   background: linear-gradient(100deg, $dark-green, $light-green);
 }
 
+.office-border {
+  background: linear-gradient(100deg, $dark-purple, $light-purple);
+}
+
+.home-and-garden-border {
+  background: linear-gradient(100deg, $dark-lime, $light-lime);
+}
+
+.entertainment-border {
+  background: linear-gradient(100deg, $dark-magenta, $light-magenta);
+}
+
 .category-card {
   display: flex;
   justify-content: center;

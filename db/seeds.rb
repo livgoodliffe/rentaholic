@@ -20,7 +20,6 @@ LITERATURE_TEXT_URL_BASE = 'https://litipsum.com/api/'
 LITERATURE_TEXTS = [ 'dracula',
                      'adventures-sherlock-holmes',
                      'dr-jekyll-and-mr-hyde',
-                     'dracula',
                      'evelina',
                      'life-of-samuel-johnson',
                      'picture-of-dorian-gray',

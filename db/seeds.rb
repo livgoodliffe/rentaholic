@@ -12,9 +12,18 @@ require 'open-uri'
 PRODUCT_LIST_URL = 'https://www.randomlists.com/data/things.json'
 PRODUCT_IMAGES_URL_BASE = 'https://www.randomlists.com/img/things/'
 PRODUCT_NAMES = JSON.parse(URI.open(PRODUCT_LIST_URL).read)["RandL"]["items"]
-PRODUCT_IMAGES = PRODUCT_NAMES.map { |product| "#{PRODUCT_IMAGES_URL_BASE}#{product.tr(' ', '_')}.jpg" }
+PRODUCT_IMAGES = PRODUCT_NAMES.map { |product| "#{PRODUCT_IMAGES_URL_BASE}#{product.downcase.tr(' ', '_')}.jpg" }
 
 PRODUCT_NAMES_CAPITALIZED = PRODUCT_NAMES.map { |product| product.split.map(&:capitalize).join(' ') }
+
+LITERATURE_TEXT_URL_BASE = 'https://litipsum.com/api/'
+LITERATURE_TEXTS = [ 'dracula',
+                     'adventures-sherlock-holmes',
+                     'dr-jekyll-and-mr-hyde',
+                     'evelina',
+                     'life-of-samuel-johnson',
+                     'picture-of-dorian-gray',
+                     'pride-and-prejudice']
 
 def random_user_id
   User.find(rand(User.all.length) + 1).id
@@ -25,7 +34,11 @@ def random_item_id
 end
 
 def random_item_category
-  Item::CATEGORIES[rand(Item::CATEGORIES.length)]
+  Item::CATEGORIES.sample
+end
+
+def random_description
+  URI.open("#{LITERATURE_TEXT_URL_BASE}#{LITERATURE_TEXTS.sample}/1").read
 end
 
 def random_booking_period
@@ -51,7 +64,7 @@ end
   Item.create(
     user_id: random_user_id,
     name: PRODUCT_NAMES_CAPITALIZED[n],
-    description: Faker::Lorem.paragraph(2, true, 4),
+    description: random_description,
     daily_rate: rand(1..1000),
     category: random_item_category,
     photo: PRODUCT_IMAGES[n]

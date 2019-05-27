@@ -6,7 +6,7 @@
 
   <div class="d-flex flex-wrap justify-content-center">
     <% Item::CATEGORIES.each do |category| %>
-      <%= link_to root_path(controller: "items", query: "technology") do %>
+      <%= link_to root_path(controller: "items", category: category) do %>
         <div class="category-card-border">
           <div class="category_card">
             <h3><%= category %></h3>

@@ -2,12 +2,10 @@
   <h1>Rentaholic</h1>
   <p>Stop buying stuff and get renting!</p>
 
-  <% if params[:query] %>
-
-    <%= render "category_page" %>
-
+  <% if @category %>
+    <%= render 'category_page' %>
   <% else %>
-    <%= render "category_cards" %>
+    <%= render 'category_cards' %>
   <% end %>
 
 </div>

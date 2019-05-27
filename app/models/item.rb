@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  
+
   CATEGORIES = [
     "Clothing",
     "Technology",

@@ -1,15 +1,15 @@
 <div class="container">
-  <div class="row">
-    <div class="card shadow-sm mb-5 col-8 p-0 m-3">
-      <%= image_tag(@item.photo, width: "400", class: "card-img-top") %>
+  <div class="row justify-content-between">
+    <div class="card shadow-sm col-8 p-0">
+      <%= image_tag(@item.photo, class: "card-img-top") %>
       <div class="card-body text-left">
         <h5 class="card-title"><%= @item.name %></h5>
         <p class="card-text"><%= @item.description %></p>
       </div>
     </div>
-    <div class="card col-3 p-0 m-3 text-left">
+    <div class="card col-3 text-left p-0">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title"><%= @item.user_id %></h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         <a href="#" class="card-link">Rent item</a>
       </div>

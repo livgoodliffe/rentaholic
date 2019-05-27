@@ -13,7 +13,6 @@ class Item < ApplicationRecord
 
 
   belongs_to :user
-  belongs_to :bookings
 
   validates :daily_rate, presence: true
   validates :name, presence: true

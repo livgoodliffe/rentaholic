@@ -3,12 +3,9 @@ class Item < ApplicationRecord
     "Clothing",
     "Technology",
     "Vehicles",
-    "Office Supplies",
-    "Gardening Tools",
-    "Boats",
-    "Toys",
-    "Games",
-    "Furniture"
+    "Office",
+    "Home and Garden",
+    "Entertainment"
   ].freeze
 
   belongs_to :user

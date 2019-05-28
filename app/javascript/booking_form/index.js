@@ -21,10 +21,8 @@ const recalculate = () => {
 
   if (amount > 0 && start_date >= today) {
     total_amount.innerText = `${amount}. ${days} day(s)`;
-    console.log('valid')
     submit_button.disabled = false;
   } else {
-    console.log('invalid')
     submit_button.disabled = true;
 
     if (amount == 0 && start_date >= today) {
@@ -40,7 +38,6 @@ const setupListeners = () => {
   const selects = document.querySelectorAll('#new_booking select');
 
   selects.forEach((elem) => {
-    console.log('listener setup')
     elem.addEventListener('change', () => {
       recalculate()
     })

@@ -13,6 +13,7 @@
             <p class="card-text"><small class="text-muted">Added on <%= wishlist.created_at.strftime("%d-%m-%Y") %></small></p>
           </div>
           <%= link_to "Rent me", new_item_booking_path(wishlist.item), class: "btn btn-success" %>
+          <%= link_to "delete", wishlist_path(wishlist), method: :delete, class: "btn btn-danger" %>
         </div>
       </div>
     </div>

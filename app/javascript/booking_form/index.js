@@ -17,13 +17,20 @@ const recalculate = () => {
 
   const amount = ((end_date - start_date) / (24 * 60 * 60 * 1000)) * daily_rate;
 
+  const submit_button = document.querySelector('.booking-submit input');
+
   if (amount > 0 && start_date >= today) {
     total_amount.innerText = amount;
+    console.log('valid')
+    submit_button.disabled = false;
   } else {
+    console.log('invalid')
+    submit_button.disabled = true;
+
     if (amount == 0 && start_date >= today) {
-      total_amount.innerText = "";
+      total_amount.innerText = "0 - Booking must be for at least 1 day";
     } else {
-      total_amount.innerText = " Invalid Date(s) Selected";
+      total_amount.innerText = "n/a - Invalid Date(s) Selected";
     }
   }
 }

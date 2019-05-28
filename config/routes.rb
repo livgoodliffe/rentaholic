@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :show] do
     resources :users, only: [:first_name, :last_name, :city]
   end
-  resources :bookings
+  resources :bookings do
+    resources :reviews, only: :create
+  end
 
   root to: 'items#index'
 

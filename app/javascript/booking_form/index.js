@@ -14,13 +14,13 @@ const recalculate = () => {
   const end_date = new Date(y2, m2 - 1, d2);
 
   const today = new Date().setHours(0, 0, 0, 0);
-
-  const amount = ((end_date - start_date) / (24 * 60 * 60 * 1000)) * daily_rate;
+  const days = Math.ceil(((end_date - start_date) / (24 * 60 * 60 * 1000)))
+  const amount = days * daily_rate;
 
   const submit_button = document.querySelector('.booking-submit input');
 
   if (amount > 0 && start_date >= today) {
-    total_amount.innerText = amount;
+    total_amount.innerText = `${amount}. ${days} day(s)`;
     console.log('valid')
     submit_button.disabled = false;
   } else {

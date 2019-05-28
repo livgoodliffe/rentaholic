@@ -1,19 +1,24 @@
 <div class="container">
+
   <h1><%= @category %></h1>
-  <div class="row">
+  <p class="icon <%= @category.parameterize %>-icon"></p>
+
+  <div class="d-flex flex-wrap justify-content-center">
     <% @items.each do |item| %>
      <%= link_to item do %>
-        <div class="card mx-3" style="width: 200px">
-          <div class="card-title">
-            <%= item.name %>
-          </div>
-          <div class="card-body">
-            <%= image_tag(item.photo, size: "160x160", alt: "#{item.name}") %>
-            <div class="div mt-3">
-              Daily Rate <strong>$<%= item.daily_rate %></strong>
+
+          <div class="card item-card-border <%= @category.parameterize %>-border" style="width: 150px, height:200px">
+
+              <div class="card-content">
+                <div class="card-img-top"><%= image_tag(item.photo, width: "140px", alt: "#{item.name}") %></div>
+                <div class="card-body">
+                  <h5 class="card-title"><%= item.name %></h5>
+                  <p class="card-text">Daily Rate <strong>$<%= item.daily_rate %></strong></p>
+                </div>
+              </div>
+
             </div>
-          </div>
-        </div>
+
       <% end %>
     <% end %>
   </div>

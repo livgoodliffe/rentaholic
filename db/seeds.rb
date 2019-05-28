@@ -8,73 +8,12 @@
 
 require 'faker'
 require 'open-uri'
-=begin
-{
-   "results":[
-      {
-         "gender":"female",
-         "name":{
-            "title":"miss",
-            "first":"naja",
-            "last":"mortensen"
-         },
-         "location":{
-            "street":"2854 hulvejen",
-            "city":"vipperød",
-            "state":"syddanmark",
-            "postcode":63560,
-            "coordinates":{
-               "latitude":"-36.7035",
-               "longitude":"58.2444"
-            },
-            "timezone":{
-               "offset":"+8:00",
-               "description":"Beijing, Perth, Singapore, Hong Kong"
-            }
-         },
-         "email":"naja.mortensen@example.com",
-         "login":{
-            "uuid":"b81d45ff-960f-4a82-b9e4-8abaeff05877",
-            "username":"crazyleopard679",
-            "password":"talon",
-            "salt":"ya8OIjDJ",
-            "md5":"b83c327a33353d466324946af773756a",
-            "sha1":"63ed66a2a07b309ce872ad630a6c18da8c3ffa2e",
-            "sha256":"0eb777aa58531c957df9c70af48c4ca72786ffb595a4b7d05e531538638a6664"
-         },
-         "dob":{
-            "date":"1981-01-24T12:42:52Z",
-            "age":38
-         },
-         "registered":{
-            "date":"2012-11-19T12:58:22Z",
-            "age":6
-         },
-         "phone":"99035445",
-         "cell":"15401190",
-         "id":{
-            "name":"CPR",
-            "value":"788558-7086"
-         },
-         "picture":{
-            "large":"https://randomuser.me/api/portraits/women/90.jpg",
-            "medium":"https://randomuser.me/api/portraits/med/women/90.jpg",
-            "thumbnail":"https://randomuser.me/api/portraits/thumb/women/90.jpg"
-         },
-         "nat":"DK"
-      }
-   ],
-   "info":{
-      "seed":"7b49649df49c0ffd",
-      "results":1,
-      "page":1,
-      "version":"1.2"
-   }
-}
-=end
+require 'nokogiri'
 
 USER_API = 'https://randomuser.me/api/'
+USER_DESCRIPTION_URL = 'https://www.fakepersongenerator.com/user-biography-generator'
 
+USER_DESCRIPTIONS = Nokogiri::HTML(open(USER_DESCRIPTION_URL)).css(".row p")
 PRODUCT_LIST_URL = 'https://www.randomlists.com/data/things.json'
 PRODUCT_IMAGES_URL_BASE = 'https://www.randomlists.com/img/things/'
 PRODUCT_NAMES = JSON.parse(URI.open(PRODUCT_LIST_URL).read)["RandL"]["items"]
@@ -95,13 +34,14 @@ def random_user_id
   User.find(rand(User.all.length) + 1).id
 end
 
-def random_user
+def random_user(n)
   data = JSON.parse(URI.open("#{USER_API}").read)
   user = {}
   user[:first_name] = data["results"][0]["name"]["first"].capitalize
   user[:last_name] = data["results"][0]["name"]["last"].capitalize
   user[:photo] = data["results"][0]["picture"]["large"]
   user[:email] = data["results"][0]["email"]
+  user[:description] = USER_DESCRIPTIONS[n].text.delete('"').gsub(/^\d\. /,'')
   user
 end
 
@@ -124,14 +64,16 @@ def random_booking_period
   [start_date.strftime(date_format), end_date.strftime(date_format)]
 end
 
+
 10.times do |n|
   puts "User create #{n+1} out of 10"
-  user = random_user
+  user = random_user(n)
   User.create(
     first_name: user[:first_name],
     last_name: user[:last_name],
     email: user[:email],
     photo: user[:photo],
+    description: user[:description],
     password: 'password123',
     city: Faker::Address.city,
   );

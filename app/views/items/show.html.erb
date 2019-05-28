@@ -32,7 +32,10 @@
     </div>
     <div class="card col-3 text-left p-0">
       <div class="card-body d-flex flex-column">
-        <h5 class="card-title"><%= @item.user.first_name %> <%= @item.user.last_name %></h5>
+        <div>Item Owner</div>
+        <h5 class="card-title"><%= @item.user.first_name %> <%= @item.user.last_name %>
+          <%= image_tag(@item.user.photo, class: 'card-user-avatar-item-show') %>
+        </h5>
         <h6 class="card-subtitle mb-2 text-muted">Location: <%= @item.user.city %></h6>
         <p class="card-text">Put sone information about user? or and enquire about item form</p>
         <h5 class="card-title">$ <%= @item.daily_rate %> per day</h5>

@@ -11,6 +11,11 @@
   width: 100%;
 }
 
+.card-user-avatar-item-show {
+  width: 250px;
+  height: 250px;
+}
+
 .card {
   color: black;
 }
@@ -60,4 +65,3 @@
 .entertainment-border {
   background: linear-gradient(100deg, $dark-magenta, $light-magenta);
 }
-

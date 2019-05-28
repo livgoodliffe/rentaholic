@@ -9,6 +9,7 @@ class Item < ApplicationRecord
   ].freeze
 
   belongs_to :user
+  has_many :bookings
 
   validates :daily_rate, presence: true
   validates :name, presence: true

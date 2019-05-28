@@ -1,0 +1,30 @@
+<div class="col-8 ">
+  <div class="card shadow-sm p-0">
+    <%= image_tag(@item.photo, class: "card-img-top") %>
+    <div class="card-body text-left">
+      <h5 class="card-title border-top pt-3"><%= @item.name %></h5>
+      <div class="card-text d-flex container text-left p-0">
+        <div class="col-8 pl-0">
+          <p class="text-justify p-0"><%= @item.description %></p>
+        </div>
+        <div class="border rounded p-3 col-4">
+          <p>Posted date: <%= @item.created_at.strftime("%d-%m-%Y") %></p>
+          <p>Category: <%= @item.category %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">
+      Bookings
+    </div>
+    <div class="card-body">
+      <% @item.bookings.each do |booking| %>
+        <div>
+          <span><%= booking.start_date %> - <%= booking.end_date %> (<%= (booking.end_date-booking.start_date).to_i %>) day(s) Mine:
+            <%= booking.user == current_user ? ' Yes' : ' No' %></span>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

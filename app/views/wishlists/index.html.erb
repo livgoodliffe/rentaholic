@@ -1,9 +1,21 @@
-<h1>Wishlist</h1>
+<div class="container">
+  <h1>Wishlist</h1>
 
-<ul>
-  <li>
-    <% @wishlist.each do |wishlist| %>
-      <p><%= wishlist.item.photo %></p>
-    <% end %>
-  </li>
-</ul>
+  <% @wishlist.each do |wishlist| %>
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <%= image_tag(wishlist.item.photo, class: "card-img") %>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title"><%= wishlist.item.name %></h5>
+            <p class="card-text"><small class="text-muted">Added on <%= wishlist.created_at.strftime("%d-%m-%Y") %></small></p>
+          </div>
+          <%= link_to "Rent me", new_item_booking_path(wishlist.item), class: "btn btn-success" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+

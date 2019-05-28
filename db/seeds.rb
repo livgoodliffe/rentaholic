@@ -11,9 +11,16 @@ require 'open-uri'
 require 'nokogiri'
 
 USER_API = 'https://randomuser.me/api/'
-USER_DESCRIPTION_URL = 'https://www.fakepersongenerator.com/user-biography-generator'
 
-USER_DESCRIPTIONS = Nokogiri::HTML(open(USER_DESCRIPTION_URL)).css(".row p")
+def cleanup_user_descriptions(descriptions)
+  descriptions.map do |description|
+    description.text.delete('"').gsub(/^\d+\. /,'')
+  end
+end
+
+USER_DESCRIPTION_URL = 'https://www.fakepersongenerator.com/user-biography-generator'
+USER_DESCRIPTIONS = cleanup_user_descriptions(Nokogiri::HTML(open(USER_DESCRIPTION_URL)).css(".row p"))
+
 PRODUCT_LIST_URL = 'https://www.randomlists.com/data/things.json'
 PRODUCT_IMAGES_URL_BASE = 'https://www.randomlists.com/img/things/'
 PRODUCT_NAMES = JSON.parse(URI.open(PRODUCT_LIST_URL).read)["RandL"]["items"]
@@ -35,13 +42,19 @@ def random_user_id
 end
 
 def random_user(n)
-  data = JSON.parse(URI.open("#{USER_API}").read)
   user = {}
-  user[:first_name] = data["results"][0]["name"]["first"].capitalize
-  user[:last_name] = data["results"][0]["name"]["last"].capitalize
-  user[:photo] = data["results"][0]["picture"]["large"]
-  user[:email] = data["results"][0]["email"]
-  user[:description] = USER_DESCRIPTIONS[n].text.delete('"').gsub(/^\d\. /,'')
+  data = JSON.parse(URI.open("#{USER_API}").read)["results"][0]
+  if data["gender"] == 'male'
+    first_name = Faker::Name.male_first_name
+  else
+    first_name = Faker::Name.female_first_name
+  end
+  last_name =   Faker::Name.last_name
+  user[:first_name] = first_name
+  user[:last_name] = last_name
+  user[:photo] = data["picture"]["large"]
+  user[:email] = "#{first_name.downcase}.#{last_name.downcase}@example.org"
+  user[:description] = USER_DESCRIPTIONS[n]
   user
 end
 

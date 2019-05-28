@@ -9,10 +9,17 @@
   margin: 16px;
 }
 
-.fas {
-  color: $light-grey;
-  font-size: 50px;
+.category-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  color: black;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
 }
+
 .clothing-border {
   background: linear-gradient(100deg, $dark-pink, $light-pink);
 }
@@ -37,13 +44,3 @@
   background: linear-gradient(100deg, $dark-magenta, $light-magenta);
 }
 
-.category-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: white;
-  color: black;
-  width: 240px;
-  height: 240px;
-  border-radius: 50%;
-}

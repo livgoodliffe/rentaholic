@@ -1,8 +1,9 @@
 <div class="container">
   <h1>Rentaholic</h1>
   <p>Stop buying stuff and get renting!</p>
-
-  <% if @category %>
+  <% if @search %>
+    <%= render 'search_results' %>
+  <% elsif @category %>
     <%= render 'category_page' %>
   <% else %>
     <%= render 'category_cards' %>

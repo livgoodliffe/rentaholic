@@ -21,21 +21,14 @@ end
 USER_DESCRIPTION_URL = 'https://www.fakepersongenerator.com/user-biography-generator'
 USER_DESCRIPTIONS = cleanup_user_descriptions(Nokogiri::HTML(open(USER_DESCRIPTION_URL)).css(".row p"))
 
-PRODUCT_LIST_URL = 'https://www.randomlists.com/data/things.json'
-PRODUCT_IMAGES_URL_BASE = 'https://www.randomlists.com/img/things/'
-PRODUCT_NAMES = JSON.parse(URI.open(PRODUCT_LIST_URL).read)["RandL"]["items"]
-PRODUCT_IMAGES = PRODUCT_NAMES.map { |product| "#{PRODUCT_IMAGES_URL_BASE}#{product.downcase.tr(' ', '_')}.jpg" }
+ITEM_LIST_URL = 'https://www.randomlists.com/data/things.json'
+ITEM_IMAGES_URL_BASE = 'https://www.randomlists.com/img/things/'
+ITEM_NAMES = JSON.parse(URI.open(ITEM_LIST_URL).read)["RandL"]["items"]
+ITEM_IMAGES = ITEM_NAMES.map { |item| "#{ITEM_IMAGES_URL_BASE}#{item.downcase.tr(' ', '_')}.jpg" }
 
-PRODUCT_NAMES_CAPITALIZED = PRODUCT_NAMES.map { |product| product.split.map(&:capitalize).join(' ') }
+ITEM_NAMES_CAPITALIZED = ITEM_NAMES.map { |item| item.split.map(&:capitalize).join(' ') }
 
-LITERATURE_TEXT_URL_BASE = 'https://litipsum.com/api/'
-LITERATURE_TEXTS = [ 'dracula',
-                     'adventures-sherlock-holmes',
-                     'dr-jekyll-and-mr-hyde',
-                     'evelina',
-                     'life-of-samuel-johnson',
-                     'picture-of-dorian-gray',
-                     'pride-and-prejudice']
+WIKIPEDIA_TEXT_URL_BASE = 'https://en.wikipedia.org/wiki/'
 
 def random_user_id
   User.find(rand(User.all.length) + 1).id
@@ -66,8 +59,54 @@ def random_item_category
   Item::CATEGORIES.sample
 end
 
-def random_description
+def random_item_description
   URI.open("#{LITERATURE_TEXT_URL_BASE}#{LITERATURE_TEXTS.sample}/1").read
+end
+
+def item_description(item_name)
+  # name changes to assist with wikipedia search
+  replacements = {
+    'buckel' => 'buckle',
+    'candy wrapper' => 'candy',
+    'soy sauce packet'=> 'soy sauce',
+    'outlet' => 'power socket',
+    'plastic fork' => 'fork',
+    'pool stick'=> 'cue stick',
+    'sketch pad'=> 'notebook',
+    'twezzers'=> 'tweezers',
+    'bow'=> 'bow tie',
+    'drawer'=> 'chest of drawers',
+    'keyboard'=> 'computer keyboard',
+    'key'=> 'key (lock)',
+    'table'=> 'table (furniture)',
+    'cord'=> 'cork (plug)',
+    'hanger'=> 'clothes hanger',
+    'charger'=> 'power adapter',
+    'lamp'=> 'desk lamp',
+    'monitor'=> 'computer monitor',
+    'needle'=> 'sewing needle',
+    'plate'=> 'plate (dishware)',
+    'purse'=> 'handbag',
+    'remote'=> 'remote control',
+    'ring'=> 'ring (jewellery)',
+    'rug'=> 'carpet',
+    'sharpie'=> 'marker pen',
+    'speakers'=> 'loudspeaker',
+    'spring'=> 'spring (device)',
+    'thread'=> 'thread (yarn)',
+    'twister'=> 'twister (game)',
+    'clamp'=> 'clamp (tool)',
+    'white out'=> 'correction fluid',
+    'controller'=> 'game controller'
+  }
+
+  item_name = replacements[item_name] if replacements.key?(item_name)
+  item_name_adjusted = item_name.downcase.capitalize.tr(' ', '_')
+  Nokogiri::HTML(open("#{WIKIPEDIA_TEXT_URL_BASE}#{item_name_adjusted}")).css(".mw-parser-output p").text.truncate_words(100).gsub(/\[\d+\]/,'').strip
+end
+
+def item_name_fixup(item_name)
+  item_name
 end
 
 def random_booking_period
@@ -79,7 +118,7 @@ end
 
 
 15.times do |n|
-  puts "User create #{n+1} out of 15"
+  puts "User created (#{n+1}/15) #{((n+1).fdiv(15)*100).to_i}%"
   user = random_user(n)
   User.create(
     first_name: user[:first_name],
@@ -93,19 +132,19 @@ end
 end
 
 190.times do |n|
-  puts "Item create #{n+1} out of 190"
+  puts "Item created (#{n+1}/190) #{((n+1).fdiv(190)*100).to_i}%"
   Item.create(
     user_id: random_user_id,
-    name: PRODUCT_NAMES_CAPITALIZED[n],
-    description: random_description,
+    name: item_name_fixup(ITEM_NAMES_CAPITALIZED[n]),
+    description: item_description(ITEM_NAMES[n]),
     daily_rate: rand(1..1000),
     category: random_item_category,
-    photo: PRODUCT_IMAGES[n]
+    photo: ITEM_IMAGES[n]
   )
 end
 
 100.times do |n|
-  puts "Booking create #{n+1} out of 100"
+  puts "Booking created (#{n+1}/100) #{((n+1).fdiv(100)*100).to_i}%"
   dates = random_booking_period
   Booking.create(
     user_id: random_user_id,

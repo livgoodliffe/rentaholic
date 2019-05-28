@@ -1,0 +1,44 @@
+.icon::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-size: 80px;
+  color: $light-grey;
+}
+
+.clothing-icon::before {
+  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f553";
+
+  color: linear-gradient(100deg, $dark-pink, $light-pink);
+}
+
+.technology-icon::before {
+  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f030";
+  color: linear-gradient(100deg, $dark-blue, $light-blue);
+}
+
+.vehicles-icon::before {
+  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f5b6";
+
+  color: linear-gradient(100deg, $dark-green, $light-green);
+}
+
+.office-icon::before {
+  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f02f";
+
+  color: linear-gradient(100deg, $dark-purple, $light-purple);
+}
+
+.home-and-garden-icon::before {
+  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f4b8";
+
+  color: linear-gradient(100deg, $dark-lime, $light-lime);
+}
+
+.entertainment-icon::before {
+  font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f11b";
+
+  color: linear-gradient(100deg, $dark-magenta, $light-magenta);
+}

@@ -37,6 +37,8 @@
           This one is mine
         <% else %>
           <button id="modal_button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking-modal" data-whatever="@fat">Rent me</button>
+          <br>
+          <%= link_to "Add me to wishlist", new_wishlist_path(item: @item, user: current_user), class: "btn btn-outline-dark" %>
           <%= render 'bookings/modal_form', rate: @item.daily_rate %>
         <% end %>
       </div>

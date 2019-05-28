@@ -8,10 +8,10 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= simple_form_for @booking do |t| %>
+        <%= simple_form_for [@item, @booking] do |t| %>
           <%= t.input :start_date %>
           <%= t.input :end_date %>
-          <div class="w-100 text-center">
+          <div class="booking-submit w-100 text-center">
             <%= t.submit class: 'btn btn-primary' %>
           </div>
         <% end %>
@@ -19,10 +19,8 @@
       <div class="modal-footer d-flex justify-content-between">
         <h5>Total: $<span id="total_amount"></span></h5>
         <div>
-          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
         </div>
       </div>
     </div>
   </div>
 </div>
-<!-- yyyymmdd -->

@@ -1,14 +1,3 @@
-.category-card-border {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  position: relative;
-  margin: 16px;
-}
-
 .category-card {
   display: flex;
   justify-content: center;
@@ -18,6 +7,17 @@
   width: 240px;
   height: 240px;
   border-radius: 50%;
+}
+
+.category-card-border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  position: relative;
+  margin: 16px;
 }
 
 .clothing-border {
@@ -43,3 +43,4 @@
 .entertainment-border {
   background: linear-gradient(100deg, $dark-magenta, $light-magenta);
 }
+

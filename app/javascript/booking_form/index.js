@@ -47,4 +47,11 @@ const setupListeners = () => {
   })
 }
 
-export default setupListeners;
+export default () => {
+  const modal_button = document.getElementById('modal_button')
+  if (modal_button !== null) {
+    modal_button.addEventListener('click', () => {
+      setupListeners();
+    })
+  }
+}

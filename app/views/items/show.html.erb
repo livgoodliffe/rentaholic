@@ -37,8 +37,8 @@
           <%= image_tag(@item.user.photo, class: 'card-user-avatar-item-show') %>
         </h5>
         <h6 class="card-subtitle mb-2 text-muted">Location: <%= @item.user.city %></h6>
-        <p class="card-text">Put sone information about user? or and enquire about item form</p>
-        <h5 class="card-title">$ <%= @item.daily_rate %> per day</h5>
+        <p class="card-text"><%=@item.user.description%></p>
+        <h5 class="card-title">Item Rate: $<%= @item.daily_rate %> per day</h5>
         <% if @item.user == current_user %>
           This one is mine
         <% else %>

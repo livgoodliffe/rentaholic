@@ -1,0 +1,25 @@
+.from-to-rate {
+  p {
+    display: inline-block;
+  }
+}
+
+.list-channel {
+  // width: 70%;
+
+}
+
+.scroll-channel {
+  overflow-y: auto;
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+
+.info-card {
+  position: relative;
+  display: inline-block;
+  background-color: white;
+  border-radius: 8px;
+  min-width: 280px;
+  margin: 8px;
+}

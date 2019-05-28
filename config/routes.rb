@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :show] do
     resources :users, only: [:first_name, :last_name, :city]
   end
+
   resources :bookings do
     resources :reviews, only: :create
   end
@@ -14,4 +15,8 @@ Rails.application.routes.draw do
     resources :bookings
   end
 
+
+  resources :wishlists do
+    resources :items, only: [:name, :photo]
+  end
 end

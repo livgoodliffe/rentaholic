@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :items, only: [:index, :show] do
-    resources :users, only: [:first_name, :last_name, :city]
-  end
+  resources :items, only: [:index, :show]
 
   resources :bookings do
     resources :reviews, only: :create
@@ -15,8 +13,5 @@ Rails.application.routes.draw do
     resources :bookings
   end
 
-
-  resources :wishlists do
-    resources :items, only: [:name, :photo]
-  end
+  resources :wishlists
 end

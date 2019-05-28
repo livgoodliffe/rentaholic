@@ -8,6 +8,72 @@
 
 require 'faker'
 require 'open-uri'
+=begin
+{
+   "results":[
+      {
+         "gender":"female",
+         "name":{
+            "title":"miss",
+            "first":"naja",
+            "last":"mortensen"
+         },
+         "location":{
+            "street":"2854 hulvejen",
+            "city":"vipperød",
+            "state":"syddanmark",
+            "postcode":63560,
+            "coordinates":{
+               "latitude":"-36.7035",
+               "longitude":"58.2444"
+            },
+            "timezone":{
+               "offset":"+8:00",
+               "description":"Beijing, Perth, Singapore, Hong Kong"
+            }
+         },
+         "email":"naja.mortensen@example.com",
+         "login":{
+            "uuid":"b81d45ff-960f-4a82-b9e4-8abaeff05877",
+            "username":"crazyleopard679",
+            "password":"talon",
+            "salt":"ya8OIjDJ",
+            "md5":"b83c327a33353d466324946af773756a",
+            "sha1":"63ed66a2a07b309ce872ad630a6c18da8c3ffa2e",
+            "sha256":"0eb777aa58531c957df9c70af48c4ca72786ffb595a4b7d05e531538638a6664"
+         },
+         "dob":{
+            "date":"1981-01-24T12:42:52Z",
+            "age":38
+         },
+         "registered":{
+            "date":"2012-11-19T12:58:22Z",
+            "age":6
+         },
+         "phone":"99035445",
+         "cell":"15401190",
+         "id":{
+            "name":"CPR",
+            "value":"788558-7086"
+         },
+         "picture":{
+            "large":"https://randomuser.me/api/portraits/women/90.jpg",
+            "medium":"https://randomuser.me/api/portraits/med/women/90.jpg",
+            "thumbnail":"https://randomuser.me/api/portraits/thumb/women/90.jpg"
+         },
+         "nat":"DK"
+      }
+   ],
+   "info":{
+      "seed":"7b49649df49c0ffd",
+      "results":1,
+      "page":1,
+      "version":"1.2"
+   }
+}
+=end
+
+USER_API = 'https://randomuser.me/api/'
 
 PRODUCT_LIST_URL = 'https://www.randomlists.com/data/things.json'
 PRODUCT_IMAGES_URL_BASE = 'https://www.randomlists.com/img/things/'
@@ -27,6 +93,16 @@ LITERATURE_TEXTS = [ 'dracula',
 
 def random_user_id
   User.find(rand(User.all.length) + 1).id
+end
+
+def random_user
+  data = JSON.parse(URI.open("#{USER_API}").read)
+  user = {}
+  user[:first_name] = data["results"][0]["name"]["first"].capitalize
+  user[:last_name] = data["results"][0]["name"]["last"].capitalize
+  user[:photo] = data["results"][0]["picture"]["large"]
+  user[:email] = data["results"][0]["email"]
+  user
 end
 
 def random_item_id
@@ -50,12 +126,14 @@ end
 
 10.times do |n|
   puts "User create #{n+1} out of 10"
+  user = random_user
   User.create(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    email: Faker::Internet.email,
+    first_name: user[:first_name],
+    last_name: user[:last_name],
+    email: user[:email],
+    photo: user[:photo],
     password: 'password123',
-    city: rand > 0.5 ? Faker::Address.city : '',
+    city: Faker::Address.city,
   );
 end
 

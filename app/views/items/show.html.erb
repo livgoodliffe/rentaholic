@@ -40,11 +40,11 @@
         <p class="card-text"><%=@item.user.description%></p>
         <h5 class="card-title">Item Rate: $<%= @item.daily_rate %> per day</h5>
         <% if @item.user == current_user %>
-          This one is mine
+          This item is mine
         <% else %>
-          <button id="modal_button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking-modal" data-whatever="@fat">Rent me</button>
+          <button id="modal_button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking-modal" data-whatever="@fat">Rent <%= @item.user.first_name %>'s <%= @item.name %></button>
           <br>
-          <%= link_to "Add me to wishlist", new_wishlist_path(item: @item, user: current_user), class: "btn btn-outline-dark" %>
+          <%= link_to "Add #{@item.user.first_name}'s #{@item.name } to my wishlist", new_wishlist_path(item: @item, user: current_user), class: "btn btn-outline-dark" %>
           <%= render 'bookings/modal_form', rate: @item.daily_rate %>
         <% end %>
       </div>

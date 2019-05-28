@@ -4,8 +4,10 @@ class ItemsController < ApplicationController
   def index
     # byebug
     if params[:search]
-      @items = Item.where('name LIKE ?', "%#{params[:search]}%")
-      @search = params[:search]
+      @search = params[:search].capitalize
+      @items = Item.where('name LIKE ?', "%#{@search}%")
+
+      # byebug
     else
       category = params[:category]
       if Item::CATEGORIES.include? (category)

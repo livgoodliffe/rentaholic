@@ -1,3 +1,5 @@
+  <!-- Menu -->
+
 <div class="dash-container d-flex">
   <div class="my-menu">
     <%= render 'my_list', user: @current_user %>
@@ -17,31 +19,19 @@
     </div>
 
   <!-- Current Bookings -->
-
-    <div class="list-channel">
-      <div class="heading">
-        <h2>Current Bookings</h2>
-      </div>
-    <%= render 'scroll_channel', user: @current_user %>
-    </div>
-
-    <!-- WishList -->
-
-    <div class="list-channel">
-      <div class="heading">
-        <h2>Wishlist</h2>
-      </div>
-    <%= render 'scroll_channel', user: @current_user %>
-    </div>
-
-  <!-- My Items -->
-
   <div class="list-channel">
     <div class="heading">
-      <h2>My Items</h2>
+      <h2>Future Bookings</h2>
     </div>
   <%= render 'scroll_channel', user: @current_user %>
   </div>
+  </div>
+
+    <!-- WishList -->
+
+
+  <!-- My Items -->
+
 
   </div>
 

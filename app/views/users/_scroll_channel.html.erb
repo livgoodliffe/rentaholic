@@ -1,14 +1,20 @@
-<div class="scroll-channel d-flex">
-  <% user.bookings.each do |booking| %>
-  <div class="info-card">
-    <img src="<%= booking.item.photo %>" alt="">
-    <div class="from-to-rate">
-      <p>From:<%= booking.start_date %></p><p>To:<%= booking.end_date %></p><p>rating</p>
-    </div>
-    <h2><%= booking.item.name %></h2>
-    <a href="#" class="add-review">
-      <div class="review-btn">Add review</div>
-    </a>
+<div class="body">
+  <div class="app">
+    <ul class="hs full">
+      <% user.bookings.each do |booking| %>
+        <li class="info-card">
+            <%= image_tag booking.item.photo, class: "dash-images"  %>
+            <div class="m-3">
+              <h2 class="my-3"><%= booking.item.name %></h2>
+              <div class="from-to-rate">
+                <p>From:<%= booking.start_date %></p><p>To:<%= booking.end_date %></p><p>rating</p>
+              </div>
+              <a href="#" class="add-review">
+                <div class="review-btn">Add review</div>
+              </a>
+            </div>
+        </li>
+      <% end %>
+    </ul>
   </div>
-  <% end %>
 </div>

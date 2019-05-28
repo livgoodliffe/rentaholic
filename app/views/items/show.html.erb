@@ -22,7 +22,10 @@
         </div>
         <div class="card-body">
           <% @item.bookings.each do |booking| %>
-            <span><%= booking.start_date %> - <%= booking.end_date %> (<%= (booking.end_date-booking.start_date).to_i %>) day(s) Mine: <%= booking.user == current_user ? ' Yes' : ' No' %></span>
+            <div>
+              <span><%= booking.start_date %> - <%= booking.end_date %> (<%= (booking.end_date-booking.start_date).to_i %>) day(s) Mine:
+                <%= booking.user == current_user ? ' Yes' : ' No' %></span>
+            </div>
           <% end %>
         </div>
       </div>

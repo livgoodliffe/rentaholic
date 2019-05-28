@@ -3,13 +3,15 @@
   <div class="d-flex flex-wrap justify-content-center">
     <% Item::CATEGORIES.each do |category| %>
       <%= link_to root_path(controller: "items", category: category) do %>
+      <div class="category-card">
         <div class="category-card-border <%= category.parameterize %>-border">
-          <div class="category-card">
+          <div class="category-card-internal">
             <div>
-            <i class="fas fa-tshirt m-3"></i>
-            <h5><%= category %></h5>
+              <p class="icon <%= category.parameterize %>-icon"></p>
+              <h5><%= category %></h5>
             </div>
           </div>
+        </div>
 
         </div>
       <% end %>

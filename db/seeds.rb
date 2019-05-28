@@ -78,8 +78,8 @@ def random_booking_period
 end
 
 
-10.times do |n|
-  puts "User create #{n+1} out of 10"
+15.times do |n|
+  puts "User create #{n+1} out of 15"
   user = random_user(n)
   User.create(
     first_name: user[:first_name],

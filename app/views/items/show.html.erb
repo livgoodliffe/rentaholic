@@ -24,7 +24,7 @@
         <% if @item.user == current_user %>
           This one is mine
         <% else %>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Rent me</button>
+          <button id="modal_button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking-modal" data-whatever="@fat">Rent me</button>
           <%= render 'bookings/modal_form', rate: @item.daily_rate %>
           <!-- <%#= link_to "Rent me", new_item_booking_path(@item), class: "btn btn-success" %> -->
         <% end %>

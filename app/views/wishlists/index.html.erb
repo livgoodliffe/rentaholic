@@ -1,0 +1,9 @@
+<h1>Wishlist</h1>
+
+<ul>
+  <li>
+    <% @wishlist.each do |wishlist| %>
+      <p><%= wishlist.item.photo %></p>
+    <% end %>
+  </li>
+</ul>

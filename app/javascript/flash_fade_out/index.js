@@ -28,6 +28,9 @@ export default () => {
       console.log(parseInt(opacity))
       const newOpacity = parseFloat(opacity) - 0.125;
       alert.style.opacity = `${newOpacity}`;
+      if (newOpacity === 0) {
+        alert.querySelector('button').click() // dismiss alert once faded
+      }
     })
   }
 

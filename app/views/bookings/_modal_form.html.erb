@@ -3,21 +3,23 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">$<span id="daily_rate"><%= rate %></span> per day</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+        <button type="button" class="close text-danger" data-dismiss="modal" aria-label="Close">
+          Close
         </button>
       </div>
       <div class="modal-body">
         <%= simple_form_for @booking do |t| %>
           <%= t.input :start_date %>
           <%= t.input :end_date %>
+          <div class="w-100 text-center">
+            <%= t.submit class: 'btn btn-primary' %>
+          </div>
         <% end %>
       </div>
       <div class="modal-footer d-flex justify-content-between">
         <h5>Total: $<span id="total_amount"></span></h5>
         <div>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Send message</button>
+          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
         </div>
       </div>
     </div>

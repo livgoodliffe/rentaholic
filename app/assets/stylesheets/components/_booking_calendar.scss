@@ -33,4 +33,15 @@
   .date-string {
     font-size: 0.75rem;
   }
+
+  .btn {
+    height: 2.5rem;
+    margin: 0 1rem;
+
+    width: 10rem;
+
+    div {
+      display: inline-block;
+    }
+  }
 }

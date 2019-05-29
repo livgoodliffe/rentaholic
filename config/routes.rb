@@ -9,7 +9,9 @@ Rails.application.routes.draw do
     resources :reviews, only: :create
   end
 
-  root to: 'items#index'
+  root to: 'pages#home'
+
+  get 'categories', to:'items#index', as: :categories
 
   resources :items, only: [:index, :show] do
     resources :bookings

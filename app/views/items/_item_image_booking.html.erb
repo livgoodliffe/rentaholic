@@ -14,17 +14,22 @@
       </div>
     </div>
   </div>
-  <div class="card">
-    <div class="card-title">
-      Bookings
-    </div>
-    <div class="card-body">
-      <% @item.bookings.each do |booking| %>
-        <div>
-          <span><%= booking.start_date %> - <%= booking.end_date %> (<%= (booking.end_date-booking.start_date).to_i %>) day(s) Mine:
-            <%= booking.user == current_user ? ' Yes' : ' No' %></span>
-        </div>
-      <% end %>
+  <div class="container booking-calendar">
+    <div class="main-title">Bookings</div>
+    <div class="row">
+      <div class="card-group">
+        <% @bookings_week.each do |key, value| %>
+          <div class="card <%= value[:available] ? 'item-available' : 'item-booked' %>">
+            <div class="card-title">
+              <div class="day-string"><%=value[:date].strftime("%A")%></div>
+              <div class="date-string"><%=value[:date].strftime("%d %b %Y") %></div>
+            </div>
+            <div class="card-body ">
+              <%= value[:available] ? 'Available' : 'Booked' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

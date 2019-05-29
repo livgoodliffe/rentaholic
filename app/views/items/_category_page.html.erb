@@ -4,11 +4,17 @@
   <div class="d-flex flex-wrap justify-content-center">
     <% @items.each do |item| %>
       <%= link_to item do %>
-        <div class="card category-items-card item-card-border <%= @category.parameterize %>-border" style="width: 150px, height:150px">
-          <div class="card-body category-items-card-body">
+        <div class="card category-items-card <%= @category.parameterize %>-border">
+          <div class="card-body">
+
             <div class="card-img-top"><%= image_tag(item.photo, width: "140px", alt: "#{item.name}") %></div>
-            <div class="card-title category-items-name"><%= item.name %></div>
-            <div class="card-text category-items-rate">$<%= item.daily_rate %></div>
+
+            <div class="card-text-bg">
+
+              <div class="card-title category-items-name"><%= item.name %></div>
+              <div class="card-text category-items-rate">$<%= item.daily_rate %></div>
+
+            </div>
           </div>
         </div>
       <% end %>

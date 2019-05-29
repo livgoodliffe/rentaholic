@@ -15,7 +15,7 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
 
   </head>
-  <body>
+  <body style="overflow-x: hidden;">
     <%= render 'shared/navbar' unless controller_name == 'pages' && action_name == 'home' %>
     <%= render 'shared/flashes' %>
     <%= yield %>

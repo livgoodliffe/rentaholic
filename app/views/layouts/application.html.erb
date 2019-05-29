@@ -21,6 +21,7 @@
     <%= render 'shared/navbar' unless controller_name == 'pages' && action_name == 'home' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
+    <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
 

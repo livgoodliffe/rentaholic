@@ -2,7 +2,7 @@
   <div class="d-flex flex-wrap justify-content-center">
     <% Item::CATEGORIES.each do |category| %>
       <%= link_to controller: "items", category: category do %>
-        <div class="category-card-border <%= category.parameterize %>-border">
+        <div class="category-card-border shadow-sm <%= category.parameterize %>-border">
           <div class="category-card">
             <div>
               <p class="icon <%= category.parameterize %>-icon"></p>

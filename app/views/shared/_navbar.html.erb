@@ -16,7 +16,7 @@
   <!-- Links -->
   <ul class="navbar-nav ml-auto">
     <li class="nav-item">
-      <a class="nav-link" href="/users/:id">Dashboard</a>
+      <a class="nav-link mr-2" href="/wishlists/:id">Wishlist</a>
     </li>
   </ul>
 
@@ -46,8 +46,9 @@
         <% else %>
           <%= image_tag "https://scholars.seo-usa.org/wp-content/uploads/sites/3/2019/03/asl-interpreter-profiles-1-300x300.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <% end %>
+
+        <!-- Dropdown -->
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <%= link_to "My Dashboard", user_path(current_user), class: "dropdown-item" %>
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
         </div>
       </li>

@@ -1,4 +1,5 @@
 .card-img-top {
+  padding-top: 16px;
   width: 100%;
 }
 
@@ -10,8 +11,13 @@
   background-color: white;
   width: 240px;
   height: 240px;
-  position: absolute;
 }
+  
+  
+.show-card-img-top {
+  margin: 0 auto;
+  width: 350px;
+  }
 
 .card-user-avatar-item-show {
   width: 250px;

@@ -1,0 +1,48 @@
+.instruction {
+  margin: 16px;
+  padding: 8px;
+  align-items: center;
+}
+
+.instruction-image {
+  border-radius: 50%;
+  background-color: $dark-grey;
+  padding: 16px;
+  img {
+    margin: 16px;
+    filter: hue-rotate(270deg) brightness(2);
+  }
+}
+
+.instruction-left {
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.instruction-right {
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.instruction-text {
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: white;
+  border-radius: 16px;
+  padding: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
+  color: $dark-grey;
+}
+
+.moto {
+  color: $dark-grey;
+  border-radius: 16px;
+  margin: 40px;
+  padding: 30px;
+  h2 {
+    margin: 16px;
+  }
+}

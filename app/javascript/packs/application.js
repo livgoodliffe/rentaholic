@@ -8,4 +8,5 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 booking_form();
 flash_fade_out();
+
 initMapbox();

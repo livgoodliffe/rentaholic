@@ -9,8 +9,8 @@
       </div>
       <div class="modal-body">
         <%= simple_form_for [@item, @booking] do |t| %>
-          <%= t.input :start_date %>
-          <%= t.input :end_date %>
+          <%= t.input :start_date, label: 'Pickup Date' %>
+          <%= t.input :end_date, label: 'Return Date' %>
           <div class="booking-submit w-100 text-center">
             <%= t.submit class: 'btn btn-primary' %>
           </div>

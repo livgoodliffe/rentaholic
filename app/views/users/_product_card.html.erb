@@ -1,0 +1,10 @@
+<% user.bookings.each do |booking| %>
+  <div class="card-product m-3">
+    <img src="<%= booking.item.photo %>">
+    <div class="card-product-infos">
+      <h2>Product name</h2>
+      <p>Product description with <strong>relevant info</strong> only.</p>
+    </div>
+  </div>
+  <% end %>
+

@@ -1,36 +1,50 @@
   <!-- Menu -->
-
-<div class="dash-container d-flex">
-  <div class="my-menu">
-    <%= render 'my_list', user: @current_user %>
-  </div>
-
-  <!-- Dash container -->
-
-  <div class="my-dash">
-
-  <!-- Future Bookings -->
-
-    <div class="list-channel">
-      <div class="heading">
-        <h2>Future Bookings</h2>
+<div class="container-fluid">
+  <div class="row"> <!-- outer row that has the menu and the dash -->
+    <div class="col-sm-12 col-md-2">
+        <!-- content inside bootstrap grid -->
+      <div class="dash-container d-flex">
+        <div class="my-menu">
+          <%= render 'my_list', user: @current_user %>
+        </div>
       </div>
-    <%= render 'scroll_channel', user: @current_user %>
+        <!-- end -->
     </div>
+    <div class="col-sm-12 col-md-10">
+      <div class="container-fluid">
 
-  <!-- Current Bookings -->
-  <div class="list-channel">
-    <div class="heading">
-      <h2>Future Bookings</h2>
+        <div class="row">
+          <div class="col-sm">
+          <!-- My Items -->
+            <div class="heading">
+              <h2>Future Bookings</h2>
+            </div>
+            <div class="list-channel d-flex">
+              <%= render 'product_card', user: @current_user %>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm">
+            <!-- Current Bookings -->
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm">
+            <!-- WishList -->
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm">
+            <!-- Future Bookings -->
+          </div>
+        </div>
+
+      </div>
     </div>
-  <%= render 'scroll_channel', user: @current_user %>
-  </div>
-  </div>
-
-    <!-- WishList -->
-
-
-  <!-- My Items -->
 
 
   </div>

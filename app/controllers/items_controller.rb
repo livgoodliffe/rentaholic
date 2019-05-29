@@ -21,8 +21,9 @@ class ItemsController < ApplicationController
     @booking = Booking.new
     @bookings_week = {}
     @booking_hash = create_booking_hash(params[:weekstart])
-
+    
     # geocoding
+    @coordinates = [@item.user.longitude, @item.user.latitude]
     @users = User.where(latitude: nil)
     nil_location = @users.map { |user| user.id }
     @items = Item.where.not(user_id: nil_location)

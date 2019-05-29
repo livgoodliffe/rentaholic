@@ -20,5 +20,11 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @booking = Booking.new
+
+    @users = User.where(latitude: nil)
+    nil_location = @users.map { |user| user.id }
+    @items = Item.where.not(user_id: nil_location)
+
+    @markers = @items.map { |item| { lat: item.user.latitude, lng: item.user.longitude } }
   end
 end

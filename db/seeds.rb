@@ -20,6 +20,23 @@ end
 
 USER_DESCRIPTION_URL = 'https://www.fakepersongenerator.com/user-biography-generator'
 USER_DESCRIPTIONS = cleanup_user_descriptions(Nokogiri::HTML(open(USER_DESCRIPTION_URL)).css(".row p"))
+USER_LOCATIONS = [
+  'East Melbourne',
+  'South Yarra',
+  'Toorak',
+  'Armadale',
+  'Melbourne',
+  'Elsternwick',
+  'Albert Park',
+  'Ivanhoe',
+  'Parkville',
+  'North Melbourne',
+  'Clifton Hill',
+  'Balaclava',
+  'Fairfield',
+  'St Kilda East',
+  'Carlton'
+]
 
 ITEM_LIST_URL = 'https://www.randomlists.com/data/things.json'
 ITEM_IMAGES_URL_BASE = 'https://www.randomlists.com/img/things/'
@@ -127,7 +144,7 @@ end
     photo: user[:photo],
     description: user[:description],
     password: 'password123',
-    city: Faker::Address.city,
+    city: USER_LOCATIONS[n],
   );
 end
 

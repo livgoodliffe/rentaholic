@@ -8,15 +8,13 @@
 }
 
 .card-img-top {
-  width: 350px;
   padding-top: 16px;
-  margin: 0 auto;
 }
 
-
-// .card-body > * {
-//   margin: 8px;
-// }
+.show-card-img-top {
+  margin: 0 auto;
+  width: 350px;
+}
 
 .card-user-avatar-item-show {
   width: 250px;

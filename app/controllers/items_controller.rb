@@ -21,6 +21,8 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @booking = Booking.new
 
+    @coordinates = [@item.user.longitude, @item.user.latitude]
+
     @users = User.where(latitude: nil)
     nil_location = @users.map { |user| user.id }
     @items = Item.where.not(user_id: nil_location)

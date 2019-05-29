@@ -1,3 +1,36 @@
 .container {
   text-align: center;
+  h1 {
+    font-family: 'Grand Hotel', cursive;
+  }
 }
+
+.splash {
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1480732149909-d4e710a0f81c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);
+  width: 100vw;
+  height: 100vh;
+  filter: grayscale(100%);
+  background-size: cover;
+  color: white;
+  text-align: center;
+  h1 {
+    font-family: 'Grand Hotel', cursive;
+    font-size: 120px;
+    margin: 0px;
+  }
+  hr {
+    border-color: white;
+    border-width: 5px;
+    margin-top: 0px;
+    width: 50%;
+    margin-bottom: 30px;
+  }
+  i {
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+body.home #navigation-bottom {
+   display: none !important;
+ }

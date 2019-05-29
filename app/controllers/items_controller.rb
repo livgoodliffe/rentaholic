@@ -15,6 +15,10 @@ class ItemsController < ApplicationController
         @category = category
       end
     end
+
+    @users = User.where(latitude: nil)
+    nil_location = @users.map { |user| user.id }
+    @items = Item.where.not(user_id: nil_location)
   end
 
   def show

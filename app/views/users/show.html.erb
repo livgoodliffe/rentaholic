@@ -12,36 +12,17 @@
     </div>
     <div class="col-sm-12 col-md-10">
       <div class="container-fluid">
+      if @params includes current
+        show current bookings
 
-        <div class="row">
-          <div class="col-sm">
-          <!-- My Items -->
-            <div class="heading">
-              <h2>Future Bookings</h2>
-            </div>
-            <div class="list-channel d-flex">
-              <%= render 'product_card', user: @current_user %>
-            </div>
-          </div>
-        </div>
+      elseif @params includes wishlist
+        show wishlist
 
-        <div class="row">
-          <div class="col-sm">
-            <!-- Current Bookings -->
-          </div>
-        </div>
+        elseif @params includes items
+          show myItems
 
-        <div class="row">
-          <div class="col-sm">
-            <!-- WishList -->
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-sm">
-            <!-- Future Bookings -->
-          </div>
-        </div>
+          else
+      <%= render 'future_bookings', user: @current_user %>
 
       </div>
     </div>

@@ -1,9 +1,7 @@
 <div class="container">
-
   <div class="d-flex flex-wrap justify-content-center">
     <% Item::CATEGORIES.each do |category| %>
-      <%= link_to root_path(controller: "items", category: category) do %>
-
+      <%= link_to controller: "items", category: category do %>
         <div class="category-card-border <%= category.parameterize %>-border">
           <div class="category-card">
             <div>
@@ -12,7 +10,6 @@
             </div>
           </div>
         </div>
-
       <% end %>
     <% end %>
   </div>

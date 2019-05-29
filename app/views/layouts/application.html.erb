@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Rentaholic</title>
 
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
@@ -14,10 +16,16 @@
 
   </head>
   <body>
-    <%= render 'shared/navbar' %>
+    <%= render 'shared/navbar' unless controller_name == 'pages' && action_name == 'home' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+
   </body>
 </html>

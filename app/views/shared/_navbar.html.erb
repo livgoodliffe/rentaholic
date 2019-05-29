@@ -30,7 +30,7 @@
   </div> -->
 
   <!-- Search -->
-  <%= form_tag("/", method: :get) do %>
+  <%= form_tag(items_path, method: :get) do %>
     <form class="form-inline" >
       <div class="md-form my-0">
         <%= text_field_tag :search, params[:search], class: "form-control mr-sm-2", placeholder: "Search"%>

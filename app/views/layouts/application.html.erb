@@ -18,9 +18,12 @@
 
   </head>
   <body style="overflow-x: hidden;">
+
     <%= render 'shared/navbar' unless controller_name == 'pages' && action_name == 'home' %>
     <%= render 'shared/flashes' %>
-    <%= yield %>
+    <div class="page_container">
+      <%= yield %>
+    </div>
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>

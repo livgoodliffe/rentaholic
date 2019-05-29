@@ -1,0 +1,36 @@
+.booking-calendar {
+  margin-bottom: 5rem;
+
+  .main-title {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .card {
+    height: 10rem;
+    flex-grow: 1;
+    flex-basis: 10%;
+  }
+
+  .card-title {
+    font-weight: bold;
+  }
+
+  .card-body {
+    white-space: nowrap;
+  }
+
+  .item-available {
+    background-color: rgba(0, 255, 0, 0.5);
+  }
+
+  .item-booked {
+    background-color: rgba(255, 0, 0, 0.5)
+  }
+
+  .date-string {
+    font-size: 0.75rem;
+  }
+}

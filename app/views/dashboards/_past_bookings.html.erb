@@ -12,6 +12,11 @@
             <h2>
               <%= booking.item.name %>
             </h2>
+            <!--    <%# if @booking.reviews %>
+              'review left'
+            <%# else %>
+              'no review left'
+            <%# end %> -->
             <p>
               <%= booking.item.description[0..100].ljust(105,".") %>
             </p>

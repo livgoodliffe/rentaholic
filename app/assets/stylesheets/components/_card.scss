@@ -4,15 +4,26 @@
   margin: 16px;
   border-radius: 16px;
   box-shadow: 5px 5px 5px $light-grey;
+  border: 10px solid white;
   img {
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
+    height: 150px;
+    object-fit: cover;
   }
   a {
     color: black;
   }
   &:hover {
-    border: 10px solid white;
+    // Joel to code the image zoom in
+  }
+  p {
+    color: $dark-blue;
+    font-weight: bold;
+  }
+  h6 {
+    font-weight: light;
+    font-size: 14px;
   }
 }
 
@@ -42,22 +53,16 @@
 
 // circle categories
 
-.category-circle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: white;
-  color: $light-grey;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  box-shadow: 5px 5px 5px $light-grey;
-  margin: 16px;
+.categories-group {
+  a {
+    text-decoration: none;
+  }
 }
 
 .category-card {
   h5 {
   font-size: 18px;
+  color: black;
   opacity: 0;
   }
   &:hover {
@@ -72,7 +77,6 @@
 
 .category-card.active {
   .category-circle {
-    color: white;
     background: linear-gradient(100deg, $dark-blue, $light-blue);
   }
   h5 {
@@ -81,11 +85,19 @@
   }
 }
 
-.categories-group {
-  a {
-    text-decoration: none;
-  }
+.category-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  color: $light-grey;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 5px 5px 5px $light-grey;
+  margin: 10px;
 }
+
 
 
 

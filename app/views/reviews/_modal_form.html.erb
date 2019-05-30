@@ -1,6 +1,7 @@
 <% booking = @bookings[booking_index] %>
 <% item = booking.item %>
 <% owner = item.user %>
+<% days = (booking.end_date - booking.start_date).to_i %>
 <div class="modal fade" id="review-modal-<%=booking_index%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -14,7 +15,7 @@
       </div>
       <div class="modal-body">
         <h6>
-          <strong>Rental Period:</strong> <%= booking.start_date.strftime("%a %d %b %Y") %> - <%= booking.end_date.strftime("%a %d %b %Y") %>
+          Rented for <strong><%= pluralize(days, 'day') %></strong> from <strong><%= booking.start_date.strftime("%a %d %b %Y")%></strong>  to <strong><%= booking.end_date.strftime("%a %d %b %Y") %></strong>
         </h6>
         <%= render 'reviews/review_form', booking_index: booking_index %>
       </div>

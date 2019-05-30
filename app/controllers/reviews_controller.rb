@@ -11,7 +11,8 @@ class ReviewsController < ApplicationController
       redirect_to @booking
     else
       flash[:alert] = "Review Invalid"
-      render 'dashboard/show'
+      byebug
+      redirect_to dashboard_path
     end
   end
 

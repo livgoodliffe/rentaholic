@@ -1,8 +1,5 @@
 class DashboardsController < ApplicationController
   def show
-    # byebug
-    # @bookings = current_user.bookings
-
     if params[:booking_type] == 'current'
       @dash_view = 'current'
       @bookings = current_bookings

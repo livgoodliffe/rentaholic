@@ -84,3 +84,31 @@
   background-color: green;
   width: 7rem;
 }
+
+.review-content {
+  font-size: 1.5rem;
+}
+
+.review-stars {
+  font-size: 1.25rem;
+  color: yellow;
+  text-shadow: 1px 1px 5px $dark-grey
+}
+
+.review-stars-footer {
+  background-color: $light-grey
+}
+
+.past-booking-image {
+  position: relative;
+}
+
+.past-booking-image-stars {
+  position: absolute;
+  bottom: 0.25rem;
+  left: 1.25rem;
+  color: yellow;
+  text-shadow: 1px 1px 5px $dark-grey;
+  width: 80%;
+  font-size: 0.75rem;
+}

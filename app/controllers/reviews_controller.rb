@@ -8,12 +8,10 @@ class ReviewsController < ApplicationController
 
     if @review.save
       flash[:notice] = "Review Created"
-      redirect_to @booking
     else
       flash[:alert] = "Review Invalid"
-      byebug
-      redirect_to dashboard_path
     end
+    redirect_to dashboard_path(booking_type: 'past')
   end
 
   private

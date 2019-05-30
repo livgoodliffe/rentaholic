@@ -4,9 +4,20 @@
   padding: 16px;
   img {
     width: 300px;
-    height: 300px
+    height: 300px;
   }
+}
 
+.item-owner-card {
+  width:300px;
+  background-color: white;
+  box-shadow: 5px 5px 5px $light-grey;
+  text-align: center;
+  img {
+    border-radius: 50%;
+    width: 100px;
+    margin: 8px;
+  }
 }
 
 .card-text-bg {

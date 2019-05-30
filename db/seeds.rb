@@ -94,7 +94,7 @@ def item_description(item_name)
     'bow'=> 'bow tie',
     'drawer'=> 'chest of drawers',
     'keyboard'=> 'computer keyboard',
-    'key'=> 'key (lock)',
+    'keys'=> 'key (lock)',
     'table'=> 'table (furniture)',
     'cork'=> 'cork (plug)',
     'hanger'=> 'clothes hanger',

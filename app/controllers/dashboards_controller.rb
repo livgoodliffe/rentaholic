@@ -1,16 +1,17 @@
 class DashboardsController < ApplicationController
   def show
     # byebug
-
-    # if params[:booking_type] == 'current'
-    # get all bookings that have a start date before today
-    # and an end date after or including today
-    # save to @dash_view, use in the view
     @bookings = current_user.bookings
 
-    @current_user = current_user
-  # end
-
+    if params[:booking_type] == 'current'
+      @dash_view == 'current'
+    elsif params[:booking_type] == 'wishlist'
+      @dash_view == 'wishlist'
+    elsif params[:booking_type] == 'my_items'
+      @dash_view == 'my_items'
+    else
+      @dash_view == 'future'
+    end
 
   end
 end

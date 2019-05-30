@@ -12,18 +12,15 @@
     </div>
     <div class="col-sm-12 col-md-10">
       <div class="container-fluid">
-        <% if @dash_view ==   %>
-      if @dash_view includes current
-        show current bookings
-
-      elseif @params includes wishlist
-        show wishlist
-
-        elseif @params includes items
-          show myItems
-
-          else
-      <%= render 'future_bookings', bookings: @bookings %>
+        <% if @dash_view == 'current' %>
+            <%= render 'current_bookings' %>
+          <% elsif @dash_view == 'wishlist' %>
+            <%= render 'wishlist' %>
+          <% elsif @dash_view == 'my_items' %>
+            <%= render 'my_items' %>
+            <% else %>
+          <%= render 'future_bookings', bookings: @bookings %>
+        <% end %>
 
       </div>
     </div>

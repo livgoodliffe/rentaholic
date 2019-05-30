@@ -1,17 +1,16 @@
 <div class="background-full">
   <div class="container">
-    <div class="color-card d-flex flex-wrap justify-content-center">
+    <div class="categories-group d-flex flex-wrap justify-content-center">
       <% Item::CATEGORIES.each do |category| %>
         <%= link_to controller: "items", category: category do %>
 
-          <div class="category-card-border <%= category.parameterize %>-border <%= 'active' if params[:category] == category %>">
-            <div class="category-card">
-              <div>
-                <p class="icon <%= category.parameterize %>-icon"></p>
-                <h5><%= category %></h5>
-              </div>
+          <div class="category-card <%= 'active' if params[:category] == category %>">
+            <div class="category-circle">
+              <p class="icon <%= category.parameterize %>-icon"></p>
             </div>
+            <h5><%= category %></h5>
           </div>
+
         <% end %>
       <% end %>
     </div>

@@ -24,7 +24,7 @@
             <p class="text-left m-auto">$<%= item.daily_rate %> per day</p>
           </div>
           <div>
-            <%= link_to new_wishlist_path(item: @item, user: current_user) do %>
+            <%= link_to item_wishlists_path(item), method: :post do %>
               <i class="far fa-star ml-3 text-right" style="font-size: 20px;"></i>
             <% end %>
           </div>

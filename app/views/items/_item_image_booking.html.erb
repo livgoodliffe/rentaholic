@@ -8,7 +8,7 @@
     <div class="d-flex justify-content-center">
       <h5><%= @item.name %></h5>
       <!-- Add to Wishlist -->
-      <%= link_to new_wishlist_path(item: @item, user: current_user) do %>
+      <%= link_to item_wishlists_path(@item), method: :post do %>
         <i class="far fa-star ml-3"></i>
       <% end %>
     </div>

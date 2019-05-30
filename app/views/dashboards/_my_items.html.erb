@@ -1,20 +1,19 @@
 <div class="row">
   <div class="col-sm">
-  <!-- My Items -->
-
+    <!-- My Items -->
     <div class="heading">
       <h2>Wishlisted Items</h2>
     </div>
     <div class="list-channel d-flex flex-wrap">
-      <% bookings.each do |booking| %>
+      <% current_user.items.each do |item| %>
         <div class="card-product m-3">
-          <img src="<%= booking.item.photo %>">
+          <%= cl_image_tag(item.photo, size: '160x160') %>
           <div class="card-product-infos">
-            <h2><%= booking.item.name %></h2>
-            <p><%= booking.item.description[0..100].ljust(105,".") %></p>
+            <h2><%= item.name %></h2>
+            <p><%= item.description[0..100].ljust(105,".") %></p>
           </div>
         </div>
-        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

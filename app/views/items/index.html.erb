@@ -1,3 +1,4 @@
+<%= render 'category_cards' %>
 
 
 <% if @search %>
@@ -7,5 +8,5 @@
   <%= link_to "", items_path, class: "btn sticky-top m-3 fas fa-chevron-circle-left btn-back" %>
   <%= render 'category_page' %>
 <% else %>
-  <%= render 'category_cards' %>
+  <h4 class="m-6 text-center">Most popular items based on rating</h4>
 <% end %>

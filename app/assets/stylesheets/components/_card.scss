@@ -16,10 +16,6 @@
   }
 }
 
-
-
-
-
 // item show page
 
 .item-main-card {
@@ -43,6 +39,42 @@
     margin: 8px;
   }
 }
+
+// circle categories
+
+.category-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  color: $light-grey;
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  h5 {
+    font-size: 18px;
+  }
+  p {
+    margin: -10px;
+  }
+}
+
+.category-card-border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: relative;
+  margin: 16px;
+  background: $light-grey;
+  box-shadow: 5px 5px 5px $light-grey;
+}
+
+
+
+
 
 
 
@@ -98,31 +130,6 @@
 }
 
 
-.category-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: white;
-  color: $light-grey;
-  font-weight: bold;
-  width: 240px;
-  height: 240px;
-  border-radius: 50%;
-}
-
-.category-card-border {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  position: relative;
-  margin: 16px;
-  background: $light-grey;
-  box-shadow: 2px 2px 8px $light-grey;
-}
-
 .clothing-border {
   &:hover {
     background: linear-gradient(100deg, $dark-pink, $light-pink);
@@ -133,6 +140,14 @@
     }
   }
 }
+.clothing-border.active {
+    background: linear-gradient(100deg, $dark-pink, $light-pink);
+    p:before {
+      background: linear-gradient(100deg, $dark-pink, $light-pink);
+      background-clip: text;
+      color: transparent;
+    }
+  }
 .technology-border {
   &:hover {
     background: linear-gradient(100deg, $dark-blue, $light-blue);
@@ -143,6 +158,14 @@
     }
   }
 }
+.technology-border.active {
+  background: linear-gradient(100deg, $dark-blue, $light-blue);
+  p:before {
+    background: linear-gradient(100deg, $dark-blue, $light-blue);
+    background-clip: text;
+    color: transparent;
+    }
+  }
 .vehicles-border {
   &:hover {
     background: linear-gradient(100deg, $dark-green, $light-green);
@@ -150,7 +173,17 @@
       background: linear-gradient(100deg, $dark-green, $light-green);
       background-clip: text;
       color: transparent;
-}}}
+    }
+  }
+}
+.vehicles-border.active {
+    background: linear-gradient(100deg, $dark-green, $light-green);
+    p:before {
+      background: linear-gradient(100deg, $dark-green, $light-green);
+      background-clip: text;
+      color: transparent;
+    }
+  }
 
 .office-border {
   &:hover {
@@ -162,6 +195,14 @@
     }
   }
 }
+.office-border.active {
+    background: linear-gradient(100deg, $dark-purple, $light-purple);
+    p:before {
+      background: linear-gradient(100deg, $dark-purple, $light-purple);
+      background-clip: text;
+      color: transparent;
+    }
+  }
 .home-and-garden-border {
   &:hover {
     background: linear-gradient(100deg, $dark-lime, $light-lime);
@@ -172,6 +213,14 @@
     }
   }
 }
+.home-and-garden-border.active {
+    background: linear-gradient(100deg, $dark-lime, $light-lime);
+    p:before {
+      background: linear-gradient(100deg, $dark-lime, $light-lime);
+      background-clip: text;
+      color: transparent;
+    }
+  }
 .entertainment-border {
   &:hover {
     background: linear-gradient(100deg, $dark-magenta, $light-magenta);
@@ -182,3 +231,11 @@
     }
   }
 }
+.entertainment-border.active {
+    background: linear-gradient(100deg, $dark-magenta, $light-magenta);
+    p:before {
+      background: linear-gradient(100deg, $dark-magenta, $light-magenta);
+      background-clip: text;
+      color: transparent;
+    }
+  }

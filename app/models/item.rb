@@ -1,10 +1,10 @@
 class Item < ApplicationRecord
   CATEGORIES = [
-    "Clothing",
+    "Fashion",
     "Technology",
     "Vehicles",
     "Office",
-    "Home and Garden",
+    "Home",
     "Entertainment"
   ].freeze
 

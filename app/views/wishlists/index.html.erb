@@ -3,22 +3,23 @@
   <h1 class="mt-3">Wishlist</h1>
   <div class="d-flex justify-content-around mt-3">
     <% @wishlist.each do |wishlist| %>
-      <div class="card mb-3" style="max-width: 540px;">
+      <div class="card mb-3 pt-3 pl-3 pb-3" style="max-width: 400px;">
         <div class="row no-gutters">
           <div class="col-md-4">
-            <%= image_tag(wishlist.item.photo, class: "card-img") %>
+            <%= cl_image_tag(wishlist.item.photo, class: "card-img") %>
           </div>
-          <div class="col-md-8">
-            <div class="card-body">
+          <div class="col-md-8 d-flex flex-column justify-content-around">
+            <div class="">
               <h5 class="card-title"><%= wishlist.item.name %></h5>
               <p class="card-text"><small class="text-muted">Added on <%= wishlist.created_at.strftime("%d-%m-%Y") %></small></p>
             </div>
-            <%= link_to "Rent me", new_item_booking_path(wishlist.item), class: "btn btn-outline-success" %>
-            <%= link_to "delete", wishlist_path(wishlist), method: :delete, class: "btn btn-danger" %>
+            <div>
+              <%= link_to "Rent me", item_path(wishlist.item), class: "btn btn-outline-success" %>
+              <%= link_to "delete", wishlist_path(wishlist), method: :delete, class: "btn btn-danger" %>
+            </div>
           </div>
         </div>
       </div>
     <% end %>
   </div>
 </div>
-

@@ -1,22 +1,29 @@
 <div class="container">
+
   <h1><%= @category %></h1>
-  <p class="icon <%= @category.parameterize %>-icon"></p>
+
   <div class="d-flex flex-wrap justify-content-center">
+
     <% @items.each do |item| %>
       <%= link_to item do %>
-        <div class="card category-items-card <%= @category.parameterize %>-border">
-          <div class="card-body">
 
-            <div class="card-img-top"><%= image_tag(item.photo, width: "140px", alt: "#{item.name}") %></div>
+      <div class="card item-card" style="width: 15rem;">
+        <%= cl_image_tag item.photo, class: "card-img-top" %>
 
-            <div class="card-text-bg">
-
-              <div class="card-title category-items-name"><%= item.name %></div>
-              <div class="card-text category-items-rate">$<%= item.daily_rate %></div>
-
-            </div>
+        <div class="d-flex justify-content-between p-3">
+          <div>
+            <h5 class="text-left"><%= item.name %></h5>
+            <h6 class="text-left text-muted"> <i class="fas fa-map-marker-alt"></i> <%= item.user.city %></h6>
+            <p class="text-left m-auto">$<%= item.daily_rate %></p>
+          </div>
+          <div>
+            <%= link_to new_wishlist_path(item: @item, user: current_user) do %>
+              <i class="far fa-star ml-3 text-right"></i>
+            <% end %>
           </div>
         </div>
+      </div>
+
       <% end %>
     <% end %>
   </div>

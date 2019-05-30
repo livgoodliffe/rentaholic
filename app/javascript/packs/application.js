@@ -1,15 +1,17 @@
-import "bootstrap";
+import 'bootstrap';
 
-import booking_form from 'booking_form';
-import flash_fade_out from 'flash_fade_out';
-import footer from 'footer';
+import bookingForm from '../booking_form';
+import flashFadeOut from '../flash_fade_out';
+import footer from '../footer';
+import select2setup from '../select2_setup';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 
 import { initMapbox } from '../plugins/init_mapbox';
 
-booking_form();
-flash_fade_out();
+bookingForm();
+flashFadeOut();
 footer();
+select2setup();
 
 initMapbox();

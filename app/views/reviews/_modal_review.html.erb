@@ -1,0 +1,17 @@
+<div class="modal fade" id="review-modal-read-<%=booking_index%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Review</h5>
+        <button type="button" class="close text-danger" data-dismiss="modal" aria-label="Close">
+          Close
+        </button>
+      </div>
+      <div class="modal-body">
+        <p><%= @bookings[booking_index].review %></p>
+      </div>
+      <div class="modal-footer d-flex justify-content-between">
+      </div>
+    </div>
+  </div>
+</div>

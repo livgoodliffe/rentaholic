@@ -60,9 +60,27 @@
   font-weight: bold;
 }
 
-.past_booking_review {
+.past-booking-review {
   position: absolute;
   bottom: 0px;
   right: 0px;
-  font-weight: bold;
+}
+
+#review-modal-button {
+  margin: 0 !important;
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  font-size: 0.75rem;
+  width: 7rem;
+}
+
+#review-modal-button-read {
+  margin: 0 !important;
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  font-size: 0.75rem;
+  background-color: green;
+  width: 7rem;
 }

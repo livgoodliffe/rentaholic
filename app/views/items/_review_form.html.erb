@@ -1,6 +1,0 @@
-<%= simple_form_for [@booking, @review] do |f| %>
-  <%= f.input :content %>
-  <%= f.input :stars, collection: Review::STARS %>
-
-  <%= f.submit "Add review", class: "btn button" %>
-<% end %>

@@ -7,10 +7,11 @@ class ReviewsController < ApplicationController
     @review.booking = @booking
 
     if @review.save
-      redirect_to @booking, notice: 'Review was successfully added.'
+      flash[:notice] = "Review Created"
     else
-      render 'item/show'
+      flash[:alert] = "Review Invalid"
     end
+    redirect_to dashboard_path(booking_type: 'past')
   end
 
   private

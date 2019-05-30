@@ -63,6 +63,8 @@
 // circle categories
 
 .categories-group {
+  display: flex;
+  padding: 16px;
   a {
     text-decoration: none;
   }
@@ -70,7 +72,9 @@
 
 .category-card {
   h5 {
-  font-size: 18px;
+  font-size: 15px;
+  width: 100px;
+  margin: 0 auto;
   color: black;
   opacity: 0;
   }
@@ -105,6 +109,9 @@
   border-radius: 50%;
   box-shadow: 5px 5px 5px $light-grey;
   margin: 10px;
+  p {
+    margin: 0;
+  }
 }
 
 

@@ -11,6 +11,12 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
 
-  geocoded_by :city
+  geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_city?
+
+  private
+
+  def location
+    "#{city} #{state} #{country}"
+  end
 end

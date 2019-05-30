@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_30_160810) do
+ActiveRecord::Schema.define(version: 2019_05_30_165025) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,8 @@ ActiveRecord::Schema.define(version: 2019_05_30_160810) do
     t.float "latitude"
     t.float "longitude"
     t.string "time_zone", default: "Melbourne"
+    t.string "state", default: "Victoria"
+    t.string "country", default: "Australia"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -1,3 +1,27 @@
+// small item card
+
+.item-card {
+  margin: 16px;
+  border-radius: 16px;
+  box-shadow: 5px 5px 5px $light-grey;
+  img {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+  a {
+    color: black;
+  }
+  &:hover {
+    border: 10px solid white;
+  }
+}
+
+
+
+
+
+// item show page
+
 .item-main-card {
   background-color: white;
   box-shadow: 5px 5px 5px $light-grey;
@@ -19,6 +43,8 @@
     margin: 8px;
   }
 }
+
+
 
 .card-text-bg {
   background-color: white;
@@ -71,14 +97,6 @@
   margin-bottom: 12px !important;
 }
 
-.category-items-card {
-  width: 250px;
-  height: 250px;
-  margin: 16px;
-      display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 .category-card {
   display: flex;
@@ -108,7 +126,6 @@
 .clothing-border {
   &:hover {
     background: linear-gradient(100deg, $dark-pink, $light-pink);
-
     p:before {
       background: linear-gradient(100deg, $dark-pink, $light-pink);
       background-clip: text;
@@ -116,11 +133,9 @@
     }
   }
 }
-
 .technology-border {
   &:hover {
     background: linear-gradient(100deg, $dark-blue, $light-blue);
-
     p:before {
       background: linear-gradient(100deg, $dark-blue, $light-blue);
       background-clip: text;
@@ -128,23 +143,18 @@
     }
   }
 }
-
 .vehicles-border {
   &:hover {
     background: linear-gradient(100deg, $dark-green, $light-green);
-
     p:before {
       background: linear-gradient(100deg, $dark-green, $light-green);
       background-clip: text;
       color: transparent;
-    }
-  }
-}
+}}}
 
 .office-border {
   &:hover {
     background: linear-gradient(100deg, $dark-purple, $light-purple);
-
     p:before {
       background: linear-gradient(100deg, $dark-purple, $light-purple);
       background-clip: text;
@@ -152,11 +162,9 @@
     }
   }
 }
-
 .home-and-garden-border {
   &:hover {
     background: linear-gradient(100deg, $dark-lime, $light-lime);
-
     p:before {
       background: linear-gradient(100deg, $dark-lime, $light-lime);
       background-clip: text;
@@ -164,7 +172,6 @@
     }
   }
 }
-
 .entertainment-border {
   &:hover {
     background: linear-gradient(100deg, $dark-magenta, $light-magenta);

@@ -8,6 +8,8 @@ class Item < ApplicationRecord
     "Entertainment"
   ].freeze
 
+  mount_uploader :photo, PhotoUploader
+
   belongs_to :user
   has_many :bookings
 
@@ -15,4 +17,5 @@ class Item < ApplicationRecord
   validates :name, presence: true
   validates :description, presence: true
   validates :category, presence: true, inclusion: { in: CATEGORIES }
+  validates :photo, presence: true
 end

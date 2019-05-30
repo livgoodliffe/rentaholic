@@ -1,19 +1,36 @@
 <div class="col-8 my-3">
-  <div class="card shadow-sm p-0">
-    <%= image_tag(@item.photo, class: "card-img-top show-card-img-top") %>
-    <div class="card-body text-left">
-      <h5 class="card-title border-top pt-3"><%= @item.name %></h5>
-      <div class="card-text d-flex container text-left p-0">
-        <div class="col-8 pl-0">
-          <p class="text-justify p-0"><%= @item.description %></p>
-        </div>
-        <div class="border rounded p-3 col-4">
-          <p>Posted date: <%= @item.created_at.strftime("%d-%m-%Y") %></p>
-          <p>Category: <%= @item.category %></p>
-        </div>
+  <div class="item-main-card d-flex">
+
+    <div>
+      <!-- Image -->
+      <%= image_tag(@item.photo) %>
+
+      <!-- Add to Wishlist -->
+      <%= link_to new_wishlist_path(item: @item, user: current_user) do %>
+        <h1>  </h1><i class="far fa-star"></i>
+      <% end %>
+    </div>
+
+    <!-- Text -->
+    <div>
+      <h5 class="border-top pt-3"><%= @item.name %></h5>
+      <p class="text-justify p-0"><%= @item.description %></p>
+
+      <div class="border rounded p-3 col-4">
+        <p>Posted date: <%= @item.created_at.strftime("%d-%m-%Y") %></p>
+        <p>Category: <%= @item.category %></p>
       </div>
     </div>
+
   </div>
+
+
+
+
+
+
+
+
   <div class="container booking-calendar" id="booking-calendar">
     <div class="row align-items-center justify-content-center">
       <%= link_to 'Previous 7 Days', item_path(@item, weekstart: (@bookings_week[0][:date]-7.days).strftime('%Y-%m-%d'))+'#booking-calendar', class: 'btn btn-primary' %>

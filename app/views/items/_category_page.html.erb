@@ -6,14 +6,13 @@
       <%= link_to item do %>
         <div class="card category-items-card <%= @category.parameterize %>-border">
           <div class="card-body">
-
-            <div class="card-img-top"><%= image_tag(item.photo, width: "140px", alt: "#{item.name}") %></div>
-
+            <div class="card-img-top">
+              <%#= image_tag(item.photo, width: "140px", alt: "#{item.name}") %>
+              <%= cl_image_tag item.photo, width: 140 %>
+            </div>
             <div class="card-text-bg">
-
               <div class="card-title category-items-name"><%= item.name %></div>
               <div class="card-text category-items-rate">$<%= item.daily_rate %></div>
-
             </div>
           </div>
         </div>

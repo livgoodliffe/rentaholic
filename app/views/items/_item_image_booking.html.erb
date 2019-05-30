@@ -1,6 +1,7 @@
 <div class="col-8 my-3">
   <div class="card shadow-sm p-0">
-    <%= image_tag(@item.photo, class: "card-img-top show-card-img-top") %>
+    <%#= image_tag(@item.photo, class: "card-img-top show-card-img-top") %>
+    <%= cl_image_tag @item.photo, class: 'card-img-top show-card-img-top' %>
     <div class="card-body text-left">
       <h5 class="card-title border-top pt-3"><%= @item.name %></h5>
       <div class="card-text d-flex container text-left p-0">

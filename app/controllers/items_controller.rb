@@ -16,9 +16,19 @@ class ItemsController < ApplicationController
 
 
   def new
+    @item = Item.new
   end
 
   def create
+    @item = Item.new(item_params)
+    @item.user = current_user
+    if @item.save
+      flash[:notice] = "Item was saved."
+      redirect_to @item
+    else
+      flash[:error] = "There was an error saving the item. Please try again."
+      render :new
+    end
   end
 
   def show

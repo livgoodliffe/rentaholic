@@ -150,14 +150,15 @@ end
 
 190.times do |n|
   puts "Item created (#{n+1}/190) #{((n+1).fdiv(190)*100).to_i}%"
-  Item.create(
+  i = Item.new(
     user_id: random_user_id,
     name: item_name_fixup(ITEM_NAMES_CAPITALIZED[n]),
     description: item_description(ITEM_NAMES[n]),
     daily_rate: rand(1..1000),
     category: random_item_category,
-    photo: ITEM_IMAGES[n]
   )
+  i.remote_photo_url = ITEM_IMAGES[n]
+  i.save
 end
 
 100.times do |n|

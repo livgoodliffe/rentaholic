@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :users, only: :show
 
-  resources :items, only: [:index, :show]
+  resources :items, only: [:index, :new, :create, :show]
 
   resources :bookings do
     resources :reviews, only: :create
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   get 'categories', to:'items#index', as: :categories
 
-  resources :items, only: [:index, :show, :new, :create] do
+  resources :items, only: [:index, :show] do
     resources :bookings
   end
 

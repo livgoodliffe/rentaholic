@@ -17,4 +17,5 @@ class Item < ApplicationRecord
   validates :name, presence: true
   validates :description, presence: true
   validates :category, presence: true, inclusion: { in: CATEGORIES }
+  validates :photo, presence: true
 end

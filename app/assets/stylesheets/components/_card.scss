@@ -1,6 +1,23 @@
-.card-img-top {
-  padding-top: 16px;
-  width: 100%;
+.item-main-card {
+  background-color: white;
+  box-shadow: 5px 5px 5px $light-grey;
+  padding: 16px;
+  img {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.item-owner-card {
+  width:300px;
+  background-color: white;
+  box-shadow: 5px 5px 5px $light-grey;
+  text-align: center;
+  img {
+    border-radius: 50%;
+    width: 100px;
+    margin: 8px;
+  }
 }
 
 .card-text-bg {
@@ -12,8 +29,7 @@
   width: 240px;
   height: 240px;
 }
-  
-  
+
 .show-card-img-top {
   margin: 0 auto;
   width: 350px;
@@ -61,7 +77,7 @@
   margin: 16px;
       display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .category-card {
@@ -152,7 +168,6 @@
 .entertainment-border {
   &:hover {
     background: linear-gradient(100deg, $dark-magenta, $light-magenta);
-
     p:before {
       background: linear-gradient(100deg, $dark-magenta, $light-magenta);
       background-clip: text;

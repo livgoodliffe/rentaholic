@@ -1,8 +1,9 @@
 <div class="card-body d-flex flex-column">
   <div>Item Owner</div>
-  <h5 class="card-title my-3"><%= @item.user.first_name %> <%= @item.user.last_name %>
+  <h5 class="card-title my-3">
+    <%= @item.user.first_name %> <%= @item.user.last_name %>
   </h5>
-    <%= image_tag(@item.user.photo, class: 'card-user-avatar-item-show rounded-circle') %>
+    <%= image_tag(avatar_url(@item.user), class: 'card-user-avatar-item-show rounded-circle') %>
   <h6 class="card-subtitle my-3 text-muted">Location: <%= @item.user.city %></h6>
   <p class="card-text"><%=@item.user.description%></p>
   <h5 class="card-title my-3">Item Rate: $<%= @item.daily_rate %> per day</h5>

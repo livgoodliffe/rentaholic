@@ -3,8 +3,8 @@ class ItemsController < ApplicationController
 
   def index
     if params[:search]
-      @search = params[:search].capitalize
-      @items = Item.where('name LIKE ?', "%#{@search}%")
+      @search = params[:search]
+      @items = Item.where('name ILIKE ?', "%#{@search}%")
     else
       category = params[:category]
       if Item::CATEGORIES.include? (category)
@@ -40,11 +40,7 @@ class ItemsController < ApplicationController
     @booking_hash = create_booking_hash(params[:weekstart])
 
     # geocoding
-    @coordinates = [@item.user.longitude, @item.user.latitude]
-    @users = User.where(latitude: nil)
-    nil_location = @users.map { |user| user.id }
-    @items = Item.where.not(user_id: nil_location)
-    @markers = @items.map { |item| { lat: item.user.latitude, lng: item.user.longitude } }
+    @markers = [{ lng: @item.user.longitude, lat: @item.user.latitude }]
   end
 
   private

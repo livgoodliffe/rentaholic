@@ -1,0 +1,27 @@
+<div class="container booking-calendar" id="booking-calendar">
+
+  <div class="row align-items-center justify-content-center">
+    <%= link_to 'Previous 7 Days', item_path(@item, weekstart: (@bookings_week[0][:date]-7.days).strftime('%Y-%m-%d'))+'#booking-calendar', class: 'btn btn-primary' %>
+    <%# byebug %>
+    <div class="main-title">Bookings</div>
+    <%= link_to 'Next 7 Days', item_path(@item, weekstart: (@bookings_week[0][:date]+7.days).strftime('%Y-%m-%d'))+'#booking-calendar', class: 'btn btn-primary' %>
+  </div>
+
+  <div class="row">
+    <div class="card-group">
+
+      <% @bookings_week.each do |key, value| %>
+        <div class="card <%= value[:available] ? 'item-available' : 'item-booked' %>">
+          <div class="card-title">
+            <div class="day-string"><%=value[:date].strftime("%A")%></div>
+            <div class="date-string"><%=value[:date].strftime("%d %b %Y") %></div>
+          </div>
+          <div class="card-body ">
+            <%= value[:available] ? 'Available' : 'Booked' %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>

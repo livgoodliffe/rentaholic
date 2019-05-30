@@ -4,11 +4,13 @@
   width: 400px;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
+
   img {
     transition: all .5s ease-out;
+
     &:hover {
       transform: scale(1.1);
     }
@@ -16,12 +18,13 @@
 }
 
 .product-card-anchor {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
     text-decoration: none;
     color: inherit;
-    &:hover {
-      text-decoration: none;
-      color: inherit;
-    }
+  }
 }
 
 .card-product img {
@@ -48,7 +51,9 @@
   padding: 16px;
 }
 
-.booking_start {
+.booking_start,
+.booking_ended,
+.booked_until {
   position: absolute;
   top: 4px;
   right: 16px;

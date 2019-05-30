@@ -6,7 +6,7 @@
     </div>
     <div class="list-channel d-flex flex-wrap">
       <% @bookings = @bookings.sort_by { |booking| Date.today - booking.end_date } %>
-      <% @bookings.each do |booking| %>
+      <% @bookings.each_with_index do |booking, index| %>
         <div class="card-product m-3">
           <img src="<%= booking.item.photo %>">
           <div class="card-product-infos">
@@ -15,10 +15,18 @@
             </h2>
             <% day_count = (Date.today - booking.end_date).to_i %>
             <p class="booking_ended">ended <%= pluralize(day_count, 'day')%> ago</p>
+            <p class="past_booking_review">
+              <% if booking.review.nil? %>
+                <button id="modal_button" type="button" class="btn btn-primary my-3" data-toggle="modal" data-target="#review-modal" data-booking-id="<%=index%>">Review <%= booking.item.user.first_name %>'s <%= booking.item.name %></button>
+              <% else %>
+                Read Your Review
+              <% end %>
+            </p>
             <p><%= booking.item.description[0..100].ljust(105,".") %></p>
           </div>
         </div>
       <% end %>
+      <%= render 'reviews/modal_form' %>
     </div>
   </div>
 </div>

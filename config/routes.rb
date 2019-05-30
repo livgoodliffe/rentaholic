@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :new, :create, :show]
 
   resources :bookings do
-    resources :reviews, only: :create
+    resources :reviews, only: [:create]
   end
 
   root to: 'pages#home'

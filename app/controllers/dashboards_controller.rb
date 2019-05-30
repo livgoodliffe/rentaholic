@@ -7,6 +7,7 @@ class DashboardsController < ApplicationController
       @dash_view = 'current'
       @bookings = current_bookings
     elsif params[:booking_type] == 'past'
+      @review = Review.new
       @dash_view = 'past'
       @bookings = past_bookings
     elsif params[:booking_type] == 'wishlist'

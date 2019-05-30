@@ -107,6 +107,7 @@ def item_description(item_name)
     'remote'=> 'remote control',
     'ring'=> 'ring (jewellery)',
     'rug'=> 'carpet',
+    'rusty nail' => 'nail (fastener)',
     'sharpie'=> 'marker pen',
     'speakers'=> 'loudspeaker',
     'spring'=> 'spring (device)',

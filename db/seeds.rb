@@ -128,7 +128,7 @@ end
 
 def random_booking_period
   date_format = '%Y-%m-%d'
-  start_date = Date.today() + rand(1..30).days
+  start_date = Date.today() - 15 + rand(1..30).days
   end_date = start_date + rand(1..7).days
   [start_date.strftime(date_format), end_date.strftime(date_format)]
 end
@@ -161,8 +161,8 @@ end
   i.save
 end
 
-100.times do |n|
-  puts "Booking created (#{n+1}/100) #{((n+1).fdiv(100)*100).to_i}%"
+200.times do |n|
+  puts "Booking created (#{n+1}/200) #{((n+1).fdiv(200)*100).to_i}%"
   dates = random_booking_period
   Booking.create(
     user_id: random_user_id,

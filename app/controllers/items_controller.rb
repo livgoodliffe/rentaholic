@@ -14,6 +14,13 @@ class ItemsController < ApplicationController
     end
   end
 
+
+  def new
+  end
+
+  def create
+  end
+
   def show
     @item = Item.find(params[:id])
 
@@ -58,5 +65,9 @@ class ItemsController < ApplicationController
         date: week_start_date + n.days
       }
     end
+  end
+
+  def item_params
+    params.require(:item).permit(:name, :description, :photo, :daily_rate, :category)
   end
 end

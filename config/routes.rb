@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   get 'categories', to:'items#index', as: :categories
 
-  resources :items, only: [:index, :show] do
+  resources :items, only: [:index, :show, :new, :create] do
     resources :bookings
   end
 

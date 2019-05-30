@@ -5,6 +5,7 @@
       <h2>Past Bookings</h2>
     </div>
     <div class="list-channel d-flex flex-wrap">
+      <% @bookings = @bookings.sort_by { |booking| Date.today - booking.end_date } %>
       <% @bookings.each do |booking| %>
         <div class="card-product m-3">
           <img src="<%= booking.item.photo %>">
@@ -12,9 +13,9 @@
             <h2>
               <%= booking.item.name %>
             </h2>
-            <p>
-              <%= booking.item.description[0..100].ljust(105,".") %>
-            </p>
+            <% day_count = (Date.today - booking.end_date).to_i %>
+            <p class="booking_ended">ended <%= pluralize(day_count, 'day')%> ago</p>
+            <p><%= booking.item.description[0..100].ljust(105,".") %></p>
           </div>
         </div>
       <% end %>

@@ -13,17 +13,21 @@
     height: 150px;
     object-fit: cover;
   }
+
   a {
     color: black;
   }
+
   &:hover {
     z-index: 100;
-      transform: scale(1.1);
+    transform: scale(1.1);
   }
+
   p {
     color: $dark-blue;
     font-weight: bold;
   }
+
   h6 {
     font-weight: light;
     font-size: 14px;
@@ -53,6 +57,7 @@
 
 .item-owner-card {
   text-align: center;
+
   img {
     border-radius: 50%;
     width: 100px;
@@ -65,6 +70,7 @@
 .categories-group {
   display: flex;
   padding: 16px;
+
   a {
     text-decoration: none;
   }
@@ -72,17 +78,19 @@
 
 .category-card {
   h5 {
-  font-size: 15px;
-  width: 100px;
-  margin: 0 auto;
-  color: black;
-  opacity: 0;
+    font-size: 15px;
+    width: 100px;
+    margin: 0 auto;
+    color: black;
+    opacity: 0;
   }
+
   &:hover {
     .category-circle {
       background: linear-gradient(100deg, $dark-blue, $light-blue);
       color: white;
     }
+
     h5 {
       opacity: 100;
     }
@@ -94,6 +102,7 @@
     background: linear-gradient(100deg, $dark-blue, $light-blue);
     color: white;
   }
+
   h5 {
     opacity: 100;
     color: black;
@@ -111,6 +120,7 @@
   border-radius: 50%;
   box-shadow: 5px 5px 5px $light-grey;
   margin: 10px;
+
   p {
     margin: 0;
   }
@@ -161,4 +171,28 @@
   right: 1rem;
   color: black;
   margin-bottom: 12px !important;
+}
+
+.item-review-stars {
+  color: yellow;
+  text-shadow: 1px 1px 5px $dark-grey;
+}
+
+.item-review-content {
+  font-size: 2rem;
+}
+
+.item-review-renter {
+  font-size: 1.25rem;
+}
+
+.item-review-duration {
+  font-size: 0.8rem;
+}
+
+.item-review-title {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
 }

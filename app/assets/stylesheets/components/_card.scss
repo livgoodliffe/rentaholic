@@ -18,7 +18,7 @@
   }
   &:hover {
     z-index: 100;
-      transform: scale(1.7);
+      transform: scale(1.1);
   }
   p {
     color: $dark-blue;
@@ -81,6 +81,7 @@
   &:hover {
     .category-circle {
       background: linear-gradient(100deg, $dark-blue, $light-blue);
+      color: white;
     }
     h5 {
       opacity: 100;
@@ -91,6 +92,7 @@
 .category-card.active {
   .category-circle {
     background: linear-gradient(100deg, $dark-blue, $light-blue);
+    color: white;
   }
   h5 {
     opacity: 100;

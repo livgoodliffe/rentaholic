@@ -17,7 +17,9 @@ Rails.application.routes.draw do
 
   resources :items, only: [:index, :show] do
     resources :bookings
+    resources :wishlists, only: :create
   end
 
   resources :wishlists
+  resources :wishlists, only: :destroy
 end

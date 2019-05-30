@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :items
   has_many :bookings
+  has_many :wishlists
 
   validates :first_name, presence: true
   validates :last_name, presence: true

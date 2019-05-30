@@ -18,7 +18,7 @@
   }
   &:hover {
     z-index: 100;
-      transform: scale(1.7);
+      transform: scale(1.1);
   }
   p {
     color: $dark-blue;
@@ -63,6 +63,8 @@
 // circle categories
 
 .categories-group {
+  display: flex;
+  padding: 16px;
   a {
     text-decoration: none;
   }
@@ -70,13 +72,16 @@
 
 .category-card {
   h5 {
-  font-size: 18px;
+  font-size: 15px;
+  width: 100px;
+  margin: 0 auto;
   color: black;
   opacity: 0;
   }
   &:hover {
     .category-circle {
       background: linear-gradient(100deg, $dark-blue, $light-blue);
+      color: white;
     }
     h5 {
       opacity: 100;
@@ -87,6 +92,7 @@
 .category-card.active {
   .category-circle {
     background: linear-gradient(100deg, $dark-blue, $light-blue);
+    color: white;
   }
   h5 {
     opacity: 100;
@@ -105,6 +111,9 @@
   border-radius: 50%;
   box-shadow: 5px 5px 5px $light-grey;
   margin: 10px;
+  p {
+    margin: 0;
+  }
 }
 
 

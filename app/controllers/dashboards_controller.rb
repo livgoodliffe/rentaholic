@@ -13,6 +13,5 @@ class DashboardsController < ApplicationController
       @dash_view == 'future'
 
     end
-
   end
 end

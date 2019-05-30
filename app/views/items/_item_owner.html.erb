@@ -1,7 +1,7 @@
 <div class="general-card item-owner-card p-3 m-3" style="width: 30vw">
   <h5 class="border-bottom">Item Owner</h5>
   <!-- Owner -->
-  <%#= cl_image_tag(@item.user.photo) %>
+  <%= cl_image_tag(avatar_url(@item.user)) %>
   <h3><%= @item.user.first_name %> <%= @item.user.last_name %></h3>
   <h6> <i class="fas fa-map-marker-alt"></i> <%= @item.user.city %></h6>
   <p class="card-text"><%=@item.user.description%></p>

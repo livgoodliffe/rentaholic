@@ -5,6 +5,8 @@
   border-radius: 16px;
   box-shadow: 5px 5px 5px $light-grey;
   border: 10px solid white;
+  transition: all .5s ease-out;
+
   img {
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
@@ -15,7 +17,8 @@
     color: black;
   }
   &:hover {
-    // Joel to code the image zoom in
+    z-index: 100;
+      transform: scale(1.7);
   }
   p {
     color: $dark-blue;
@@ -26,6 +29,7 @@
     font-size: 14px;
   }
 }
+
 
 // item show page
 

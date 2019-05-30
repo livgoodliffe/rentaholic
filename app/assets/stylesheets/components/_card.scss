@@ -33,20 +33,25 @@
 
 // item show page
 
-.item-main-card {
+.general-card {
+  padding: 16px;
+  margin: 16px;
   background-color: white;
   box-shadow: 5px 5px 5px $light-grey;
-  padding: 16px;
+  border-radius: 20px,
+}
+
+.item-main-card {
   img {
     width: 300px;
     height: 300px;
+    border-radius: 16px;
+    margin-right: 16px;
+    margin-bottom: 16px;
   }
 }
 
 .item-owner-card {
-  width:300px;
-  background-color: white;
-  box-shadow: 5px 5px 5px $light-grey;
   text-align: center;
   img {
     border-radius: 50%;

@@ -1,9 +1,10 @@
-New Item Page
-<%= simple_form_for(@item) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :daily_rate %>
-  <%= f.input :category, collection: Item::CATEGORIES %>
-  <%= f.input :photo %>
-  <%= f.submit %>
-<% end %>
+<div class="container m-4 text-left" style="width: 50%">
+  <%= simple_form_for(@item) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :daily_rate %>
+    <%= f.input :category, collection: Item::CATEGORIES %>
+    <%= f.input :photo %>
+    <%= f.submit class: "btn btn-info"%>
+  <% end %>
+</div>

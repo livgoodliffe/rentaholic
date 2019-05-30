@@ -1,8 +1,10 @@
 
 
 <% if @search %>
+  <%= link_to "", :back, class: "btn sticky-top m-3 fas fa-chevron-circle-left btn-back" %>
   <%= render 'search_results' %>
 <% elsif @category %>
+  <%= link_to "", items_path, class: "btn sticky-top m-3 fas fa-chevron-circle-left btn-back" %>
   <%= render 'category_page' %>
 <% else %>
   <%= render 'category_cards' %>

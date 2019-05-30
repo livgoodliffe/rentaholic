@@ -1,0 +1,25 @@
+.splash {
+  background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)), url(https://cdn.dribbble.com/users/2117674/screenshots/6548074/final.gif);
+  width: 100vw;
+  height: 100vh;
+  filter: grayscale(100%);
+  background-size: cover;
+  color: white;
+  text-align: center;
+  h1 {
+    font-family: 'Grand Hotel', cursive;
+    font-size: 120px;
+    margin: 0px;
+  }
+  hr {
+    border-color: white;
+    border-width: 5px;
+    margin-top: 0px;
+    width: 50%;
+    margin-bottom: 30px;
+  }
+  i {
+    position: absolute;
+    bottom: 0;
+  }
+}

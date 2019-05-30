@@ -1,12 +1,10 @@
 class DashboardsController < ApplicationController
   def show
-    # byebug
-    # @bookings = current_user.bookings
-
     if params[:booking_type] == 'current'
       @dash_view = 'current'
       @bookings = current_bookings
     elsif params[:booking_type] == 'past'
+      @review = Review.new
       @dash_view = 'past'
       @bookings = past_bookings
     elsif params[:booking_type] == 'wishlist'

@@ -4,11 +4,13 @@
   width: 400px;
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
+
   img {
     transition: all .5s ease-out;
+
     &:hover {
       transform: scale(1.1);
     }
@@ -16,12 +18,13 @@
 }
 
 .product-card-anchor {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
     text-decoration: none;
     color: inherit;
-    &:hover {
-      text-decoration: none;
-      color: inherit;
-    }
+  }
 }
 
 .card-product img {
@@ -48,9 +51,64 @@
   padding: 16px;
 }
 
-.booking_start {
+.booking_start,
+.booking_ended,
+.booked_until {
   position: absolute;
   top: 4px;
   right: 16px;
   font-weight: bold;
+}
+
+.past-booking-review {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+#review-modal-button {
+  margin: 0 !important;
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  font-size: 0.75rem;
+  width: 7rem;
+}
+
+#review-modal-button-read {
+  margin: 0 !important;
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  font-size: 0.75rem;
+  background-color: green;
+  width: 7rem;
+}
+
+.review-content {
+  font-size: 1.5rem;
+}
+
+.review-stars {
+  font-size: 1.25rem;
+  color: yellow;
+  text-shadow: 1px 1px 5px $dark-grey
+}
+
+.review-stars-footer {
+  background-color: $light-grey
+}
+
+.past-booking-image {
+  position: relative;
+}
+
+.past-booking-image-stars {
+  position: absolute;
+  bottom: 0.25rem;
+  left: 1.25rem;
+  color: yellow;
+  text-shadow: 1px 1px 5px $dark-grey;
+  width: 80%;
+  font-size: 0.75rem;
 }

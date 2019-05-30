@@ -6,7 +6,7 @@
       <h2>Future Bookings</h2>
     </div>
     <div class="list-channel d-flex flex-wrap">
-      <% user.bookings.each do |booking| %>
+      <% bookings.each do |booking| %>
         <div class="card-product m-3">
           <img src="<%= booking.item.photo %>">
           <div class="card-product-infos">

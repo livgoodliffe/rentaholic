@@ -96,7 +96,7 @@ def item_description(item_name)
     'keyboard'=> 'computer keyboard',
     'key'=> 'key (lock)',
     'table'=> 'table (furniture)',
-    'cord'=> 'cork (plug)',
+    'cork'=> 'cork (plug)',
     'hanger'=> 'clothes hanger',
     'charger'=> 'power adapter',
     'lamp'=> 'desk lamp',

@@ -8,21 +8,23 @@
       <% @bookings = @bookings.sort_by { |booking| Date.today - booking.end_date } %>
       <% @bookings.each_with_index do |booking, index| %>
         <div class="card-product m-3">
-          <div class="past-booking-image">
-            <img src="<%= booking.item.photo %>">
-            <% if !booking.review.nil? %>
-              <div class="past-booking-image-stars">
-                <% full_stars = booking.review.stars %>
-                <% empty_stars = Review::STARS.length - 1 - full_stars %>
-                <% full_stars.times do %>
-                  <i class="fas fa-star"></i>
-                <% end %>
-                <% empty_stars.times do %>
-                  <i class="far fa-star"></i>
-                <% end %>
-              </div>
-            <% end %>
-          </div>
+          <%= link_to item_path(booking.item), class: "product-card-anchor" do %>
+            <div class="past-booking-image">
+              <img src="<%= booking.item.photo %>">
+              <% if !booking.review.nil? %>
+                <div class="past-booking-image-stars">
+                  <% full_stars = booking.review.stars %>
+                  <% empty_stars = Review::STARS.length - 1 - full_stars %>
+                  <% full_stars.times do %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                  <% empty_stars.times do %>
+                    <i class="far fa-star"></i>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
           <div class="card-product-infos">
             <h2><%= booking.item.name %></h2>
             <% day_count = (Date.today - booking.end_date).to_i %>

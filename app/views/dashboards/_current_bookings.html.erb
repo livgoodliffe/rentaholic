@@ -7,15 +7,17 @@
     <div class="list-channel d-flex flex-wrap">
       <% @bookings = @bookings.sort_by { |booking| booking.end_date - Date.today } %>
       <% @bookings.each do |booking| %>
-        <div class="card-product m-3">
-          <img src="<%= booking.item.photo %>">
-          <div class="card-product-infos">
-            <h2><%= booking.item.name %></h2>
-            <% day_count = (booking.end_date - Date.today).to_i %>
-            <p class="booked_until"><%= pluralize(day_count, 'day')%> remaining</p>
-            <p><%= booking.item.description[0..100].ljust(105,".") %></p>
+        <%= link_to item_path(booking.item), class: "product-card-anchor" do %>
+          <div class="card-product m-3">
+            <img src="<%= booking.item.photo %>">
+            <div class="card-product-infos">
+              <h2><%= booking.item.name %></h2>
+              <% day_count = (booking.end_date - Date.today).to_i %>
+              <p class="booked_until"><%= pluralize(day_count, 'day')%> remaining</p>
+              <p><%= booking.item.description[0..100].ljust(105,".") %></p>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
     </div>
   </div>

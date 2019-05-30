@@ -1,0 +1,34 @@
+  <!-- Menu -->
+<div class="container-fluid">
+  <div class="row"> <!-- outer row that has the menu and the dash -->
+    <div class="col-sm-12 col-md-2">
+        <!-- content inside bootstrap grid -->
+      <div class="dash-container d-flex">
+        <div class="my-menu">
+          <%= render 'my_list', bookings: @bookings %>
+        </div>
+      </div>
+        <!-- end -->
+    </div>
+    <div class="col-sm-12 col-md-10">
+      <div class="container-fluid">
+        <% if @dash_view ==   %>
+      if @dash_view includes current
+        show current bookings
+
+      elseif @params includes wishlist
+        show wishlist
+
+        elseif @params includes items
+          show myItems
+
+          else
+      <%= render 'future_bookings', bookings: @bookings %>
+
+      </div>
+    </div>
+
+
+  </div>
+
+</div>

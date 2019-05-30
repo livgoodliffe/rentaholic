@@ -11,6 +11,7 @@ class DashboardsController < ApplicationController
       @dash_view == 'my_items'
     else
       @dash_view == 'future'
+
     end
 
   end

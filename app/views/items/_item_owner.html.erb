@@ -12,7 +12,8 @@
   <% else %>
     <button id="modal_button" type="button" class="btn btn-primary my-3" data-toggle="modal" data-target="#booking-modal" data-whatever="@fat">Rent <%= @item.user.first_name %>'s <%= @item.name %></button>
     <br>
-    <%= link_to "Add #{@item.user.first_name}'s #{@item.name } to my wishlist", new_wishlist_path(item: @item, user: current_user), class: "btn btn-outline-dark" %>
-    <%= render 'bookings/modal_form', rate: @item.daily_rate %>
+
+  <%= render 'bookings/modal_form', rate: @item.daily_rate %>
+
   <% end %>
 </div>

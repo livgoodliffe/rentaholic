@@ -1,57 +1,45 @@
-<div class="col-8 my-3">
-  <div class="item-main-card d-flex">
+<div class="item-main-card d-flex">
 
-    <div>
-      <!-- Image -->
-      <%= image_tag(@item.photo) %>
+  <div>
+    <!-- Image -->
+    <%= image_tag(@item.photo) %>
+
+  </div>
+
+  <!-- Text -->
+  <div>
+    <div class="d-flex justify-content-center">
+      <h5><%= @item.name %></h5>
 
       <!-- Add to Wishlist -->
       <%= link_to new_wishlist_path(item: @item, user: current_user) do %>
-        <h1>  </h1><i class="far fa-star"></i>
+        <i class="far fa-star ml-3"></i>
       <% end %>
     </div>
 
-    <!-- Text -->
-    <div>
-      <h5 class="border-top pt-3"><%= @item.name %></h5>
-      <p class="text-justify p-0"><%= @item.description %></p>
+    <p class="text-justify"><%= @item.description %></p>
 
-      <div class="border rounded p-3 col-4">
-        <p>Posted date: <%= @item.created_at.strftime("%d-%m-%Y") %></p>
-        <p>Category: <%= @item.category %></p>
-      </div>
-    </div>
+    <h5>$<%= @item.daily_rate %> per day</h5>
 
-  </div>
+    <!-- Rent this item -->
 
+        <% if @item.user == current_user %>
+          This item is mine
+        <% else %>
+          <button id="modal_button" type="button" class="btn btn-primary my-3" data-toggle="modal" data-target="#booking-modal" data-whatever="@fat">Rent <%= @item.user.first_name %>'s <%= @item.name %></button>
+          <br>
 
-
-
-
-
-
-
-  <div class="container booking-calendar" id="booking-calendar">
-    <div class="row align-items-center justify-content-center">
-      <%= link_to 'Previous 7 Days', item_path(@item, weekstart: (@bookings_week[0][:date]-7.days).strftime('%Y-%m-%d'))+'#booking-calendar', class: 'btn btn-primary' %>
-      <%# byebug %>
-      <div class="main-title">Bookings</div>
-      <%= link_to 'Next 7 Days', item_path(@item, weekstart: (@bookings_week[0][:date]+7.days).strftime('%Y-%m-%d'))+'#booking-calendar', class: 'btn btn-primary' %>
-    </div>
-    <div class="row">
-      <div class="card-group">
-        <% @bookings_week.each do |key, value| %>
-          <div class="card <%= value[:available] ? 'item-available' : 'item-booked' %>">
-            <div class="card-title">
-              <div class="day-string"><%=value[:date].strftime("%A")%></div>
-              <div class="date-string"><%=value[:date].strftime("%d %b %Y") %></div>
-            </div>
-            <div class="card-body ">
-              <%= value[:available] ? 'Available' : 'Booked' %>
-            </div>
-          </div>
+        <%= render 'bookings/modal_form', rate: @item.daily_rate %>
         <% end %>
-      </div>
+
+    <!-- Further information -->
+
+    <div class="border border-dark rounded">
+      <p>Posted: <%= @item.created_at.strftime("%d-%m-%Y") %></p>
+    </div>
+    <div class="category-tag mt-3 <%= @item.category.parameterize %>-background">
+     <%= @item.category %>
     </div>
   </div>
+
 </div>

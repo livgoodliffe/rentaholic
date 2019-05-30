@@ -1,15 +1,11 @@
 .icon::before {
   -webkit-font-smoothing: antialiased;
   font-size: 40px;
-  color: $light-grey;
   margin: 0px;
 }
 
 .clothing-icon::before {
   font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f553";
-
-  &:hover {color: linear-gradient(100deg, $dark-pink, $light-pink);
-  }
 }
 
 .technology-icon::before {
@@ -18,24 +14,16 @@
 
 .vehicles-icon::before {
   font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f5b6";
-
-  color: linear-gradient(100deg, $dark-green, $light-green);
 }
 
 .office-icon::before {
   font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f02f";
-
-  color: linear-gradient(100deg, $dark-purple, $light-purple);
 }
 
 .home-and-garden-icon::before {
   font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f4b8";
-
-  color: linear-gradient(100deg, $dark-lime, $light-lime);
 }
 
 .entertainment-icon::before {
   font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f11b";
-
-  color: linear-gradient(100deg, $dark-magenta, $light-magenta);
 }

@@ -6,17 +6,22 @@
     </div>
     <div class="list-channel d-flex flex-wrap">
       <% @bookings.each do |booking| %>
-      <div class="card-product m-3">
-        <img src="<%= booking.item.photo %>">
-        <div class="card-product-infos">
-          <h2>
-            <%= booking.item.name %>
-          </h2>
-          <p>
-            <%= booking.item.description[0..100].ljust(105,".") %>
-          </p>
+        <%= link_to item_path(booking.item), class: "product-card-anchor" do %>
+        <div class="card-product m-3">
+          <img src="<%= booking.item.photo %>">
+          <div class="card-product-infos">
+            <div class="d-flex justify-content-between">
+              <h2><%= booking.item.name %></h2>
+              <p class="booking_start">in <%= (booking.end_date - Date.today).to_i %> day(s)</p>
+            </div>
+            <p>
+              <%= booking.item.description[0..100].ljust(105,".") %>
+            </p>
+            <div>
+            </div>
+          </div>
         </div>
-      </div>
+        <% end %>
       <% end %>
     </div>
   </div>

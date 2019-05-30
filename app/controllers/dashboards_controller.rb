@@ -17,7 +17,6 @@ class DashboardsController < ApplicationController
       @dash_view = 'future'
       @bookings = future_bookings
     end
-
   end
 
   private

@@ -17,7 +17,7 @@
             <p class="booking_ended">ended <%= pluralize(day_count, 'day')%> ago</p>
             <p class="past_booking_review">
               <% if booking.review.nil? %>
-                <button id="modal_button" type="button" class="btn btn-primary my-3" data-toggle="modal" data-target="#review-modal" data-booking-id="<%=index%>">Review <%= booking.item.user.first_name %>'s <%= booking.item.name %></button>
+                <button id="modal_button" type="button" class="btn btn-primary my-3" data-toggle="modal" data-target="#review-modal" data-booking-id="<%=index%>">Review</button>
               <% else %>
                 Read Your Review
               <% end %>

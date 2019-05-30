@@ -11,12 +11,13 @@
 .clothing-icon::before {
   font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f553";
 
-  color: linear-gradient(100deg, $dark-pink, $light-pink);
+  &:hover {color: linear-gradient(100deg, $dark-pink, $light-pink);
+  }
 }
 
 .technology-icon::before {
   font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f030";
-  color: linear-gradient(100deg, $dark-blue, $light-blue);
+  // color: red;
 }
 
 .vehicles-icon::before {

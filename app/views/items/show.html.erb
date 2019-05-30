@@ -1,8 +1,9 @@
-<div class="container">
+<div class="container mt-3">
+  <%= link_to "", :back, class: "btn sticky-top m-3 fas fa-chevron-circle-left btn-back" %>
   <div class="row justify-content-between">
     <%= render 'item_image_booking' %>
-    <div class="card col-3 text-left p-0">
-      <%= render 'item_owner_card_body' %>
+    <div class="card col-3 text-left p-0 my-3">
+      <%= render 'item_owner' %>
     </div>
   </div>
 <!--   <div

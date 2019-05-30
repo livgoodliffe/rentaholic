@@ -3,8 +3,8 @@ class ItemsController < ApplicationController
 
   def index
     if params[:search]
-      @search = params[:search].capitalize
-      @items = Item.where('name LIKE ?', "%#{@search}%")
+      @search = params[:search]
+      @items = Item.where('name ILIKE ?', "%#{@search}%")
     else
       category = params[:category]
       if Item::CATEGORIES.include? (category)
@@ -21,13 +21,9 @@ class ItemsController < ApplicationController
     @booking = Booking.new
     @bookings_week = {}
     @booking_hash = create_booking_hash(params[:weekstart])
-    
+
     # geocoding
-    @coordinates = [@item.user.longitude, @item.user.latitude]
-    @users = User.where(latitude: nil)
-    nil_location = @users.map { |user| user.id }
-    @items = Item.where.not(user_id: nil_location)
-    @markers = @items.map { |item| { lat: item.user.latitude, lng: item.user.longitude } }
+    @markers = [{ lng: @item.user.longitude, lat: @item.user.latitude }]
   end
 
   private
@@ -46,13 +42,17 @@ class ItemsController < ApplicationController
     # in progress (will implement buttons later)
     if week_start_date == nil
       week_start_date = Date.today
-      7.times do |n|
-        @bookings_week[n] = {
-          available: booking_availability(week_start_date + n.days),
-          date: week_start_date + n.days
-        }
-      end
     else
+      year = week_start_date[0..3].to_i
+      month = week_start_date[5..6].to_i
+      day = week_start_date[8..9].to_i
+      week_start_date = Date.new(year, month, day)
+    end
+    7.times do |n|
+      @bookings_week[n] = {
+        available: booking_availability(week_start_date + n.days),
+        date: week_start_date + n.days
+      }
     end
   end
 end

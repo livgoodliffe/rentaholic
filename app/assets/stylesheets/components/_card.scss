@@ -1,15 +1,28 @@
-.item-card-border {
-  margin: 16px;
-  padding: 4px;
+.item-main-card {
+  background-color: white;
+  box-shadow: 5px 5px 5px $light-grey;
+  padding: 16px;
+  img {
+    width: 300px;
+    height: 300px
+  }
+
 }
 
-.card-content {
+.card-text-bg {
   background-color: white;
 }
 
-.card-img-top {
-  width: 100%;
+.card-body {
+  background-color: white;
+  width: 240px;
+  height: 240px;
 }
+
+.show-card-img-top {
+  margin: 0 auto;
+  width: 350px;
+  }
 
 .card-user-avatar-item-show {
   width: 250px;
@@ -20,12 +33,49 @@
   color: black;
 }
 
+.color-card {
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    font-weight: bold;
+  }
+}
+
+.category-items-name {
+  position: absolute;
+  padding: 0;
+  bottom: 0;
+  left: 1rem;
+  color: black;
+  background-color: white;
+}
+
+.category-items-rate {
+  position: absolute;
+  padding: 0;
+  bottom: 0;
+  right: 1rem;
+  color: black;
+  margin-bottom: 12px !important;
+}
+
+.category-items-card {
+  width: 250px;
+  height: 250px;
+  margin: 16px;
+      display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .category-card {
   display: flex;
   justify-content: center;
   align-items: center;
   background: white;
-  color: black;
+  color: $light-grey;
+  font-weight: bold;
   width: 240px;
   height: 240px;
   border-radius: 50%;
@@ -40,28 +90,77 @@
   border-radius: 50%;
   position: relative;
   margin: 16px;
+  background: $light-grey;
+  box-shadow: 2px 2px 8px $light-grey;
 }
 
 .clothing-border {
-  background: linear-gradient(100deg, $dark-pink, $light-pink);
+  &:hover {
+    background: linear-gradient(100deg, $dark-pink, $light-pink);
+
+    p:before {
+      background: linear-gradient(100deg, $dark-pink, $light-pink);
+      background-clip: text;
+      color: transparent;
+    }
+  }
 }
 
 .technology-border {
-  background: linear-gradient(100deg, $dark-blue, $light-blue);
+  &:hover {
+    background: linear-gradient(100deg, $dark-blue, $light-blue);
+
+    p:before {
+      background: linear-gradient(100deg, $dark-blue, $light-blue);
+      background-clip: text;
+      color: transparent;
+    }
+  }
 }
 
 .vehicles-border {
-  background: linear-gradient(100deg, $dark-green, $light-green);
+  &:hover {
+    background: linear-gradient(100deg, $dark-green, $light-green);
+
+    p:before {
+      background: linear-gradient(100deg, $dark-green, $light-green);
+      background-clip: text;
+      color: transparent;
+    }
+  }
 }
 
 .office-border {
-  background: linear-gradient(100deg, $dark-purple, $light-purple);
+  &:hover {
+    background: linear-gradient(100deg, $dark-purple, $light-purple);
+
+    p:before {
+      background: linear-gradient(100deg, $dark-purple, $light-purple);
+      background-clip: text;
+      color: transparent;
+    }
+  }
 }
 
 .home-and-garden-border {
-  background: linear-gradient(100deg, $dark-lime, $light-lime);
+  &:hover {
+    background: linear-gradient(100deg, $dark-lime, $light-lime);
+
+    p:before {
+      background: linear-gradient(100deg, $dark-lime, $light-lime);
+      background-clip: text;
+      color: transparent;
+    }
+  }
 }
 
 .entertainment-border {
-  background: linear-gradient(100deg, $dark-magenta, $light-magenta);
+  &:hover {
+    background: linear-gradient(100deg, $dark-magenta, $light-magenta);
+    p:before {
+      background: linear-gradient(100deg, $dark-magenta, $light-magenta);
+      background-clip: text;
+      color: transparent;
+    }
+  }
 }

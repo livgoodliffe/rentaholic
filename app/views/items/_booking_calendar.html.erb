@@ -2,11 +2,11 @@
   <div class="row align-items-center flex-column">
     <div class="row justify-content-center align-items-center">
       <div class="calendar-button">
-        <%= link_to '<', item_path(@item, month: (@bookings_month[0][:date]-1.month).strftime('%Y-%m'))+'#booking-calendar', class: 'btn btn-light text-primary mr-3' %>
+        <%= link_to '<', item_path(@item, month: (@bookings_month[0][:date]-1.month).strftime('%Y-%m')), class: 'btn btn-light text-primary mr-3' %>
       </div>
       <div class="main-title"><%= @bookings_month[0][:date].strftime('%B')%></div>
       <div class="calendar-button">
-        <%= link_to '>', item_path(@item, month: (@bookings_month[0][:date]+1.month).strftime('%Y-%m'))+'#booking-calendar', class: 'btn btn-light text-primary ml-2' %>
+        <%= link_to '>', item_path(@item, month: (@bookings_month[0][:date]+1.month).strftime('%Y-%m')), class: 'btn btn-light text-primary ml-2' %>
       </div>
     </div>
     <div class="grid-month-header-row mb-3">

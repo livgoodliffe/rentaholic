@@ -20,7 +20,7 @@ end
   puts "Review created (#{n+1}/#{PAST_BOOKINGS.count}) #{((n+1).fdiv(PAST_BOOKINGS.count)*100).to_i}%"
   Review.create(
     booking_id: PAST_BOOKINGS[n][:id],
-    content: Faker::Lorem.sentence(3, false, 12),
+    content: Faker::Lorem.sentence(3, false, 4),
     stars: Review::STARS.sample,
   )
 end

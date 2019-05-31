@@ -8,24 +8,19 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
     <% if user_signed_in? %>
       <!-- Hi [user's first name] -->
       <span class="navbar-text text-light mr-3"> Hey <%= current_user.first_name %> 🙂</span>
       <!-- Links -->
       <ul class="navbar-nav ml-auto">
-<!--         <li class="nav-item">
-          <%= link_to "Add Item", new_item_path, class: "nav-link mr-2 mr-3 font-weight-normal" %>
-        </li> -->
         <!-- <li class="nav-item"> -->
-          <%#= link_to "Wishlist", wishlists_path, class: "nav-link mr-2 mr-3 font-weight-normal" %>
+        <%#= link_to "Wishlist", wishlists_path, class: "nav-link mr-2 mr-3 font-weight-normal" %>
         <!-- </li> -->
         <li class="nav-item mr-3">
           <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
         </li>
       </ul>
     <% end %>
-
     <!-- Search -->
     <%= form_tag(items_path, method: :get) do %>
       <form class="form-inline" >

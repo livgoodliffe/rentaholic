@@ -4,10 +4,10 @@
     <div class="heading">
       <h2>My Items</h2>
     </div>
-    <div class="list-channel d-flex flex-wrap">
+    <div class="list-channel d-flex flex-wrap justify-content-around">
       <% current_user.items.each do |item| %>
         <%= link_to item_path(item), class: "product-card-anchor" do %>
-          <div class="card-product m-3">
+          <div class="card-product m-3 card-hover">
             <img src="<%= item.photo %>">
             <div class="card-product-infos">
               <h2><%= item.name %></h2>

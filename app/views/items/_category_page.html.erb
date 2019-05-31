@@ -12,16 +12,16 @@
           <div class="d-flex justify-content-between p-2">
             <div>
               <h6 class="text-left text-muted"> <i class="fas fa-map-marker-alt"></i> <%= item.user.city %></h6>
-              <h5 class="text-left"><%= item.name %></h5>
-              <!-- Code this to be responsive -->
-              <h6 class="text-left">Available now</h6>
+              <h5 class="text-left mt-2"><%= item.name %></h5>
               <p class="text-left m-auto">$<%= item.daily_rate %> per day</p>
             </div>
             <div>
+
               <div class="star" id="<%= item.id %>">
                 <%= render 'star_index', item: item %>
               </div>
               <!-- average star rating goes here -->
+
               <% if !item.reviews.empty? %>
                 <% total_stars = item.reviews.reduce(0) { |acc, review| acc += review.stars } %>
                 <% avg_stars = total_stars.fdiv(item.reviews.count) %>
@@ -41,6 +41,7 @@
                   <% end %>
                 </div>
               <% end %>
+
             </div>
           </div>
         </div>

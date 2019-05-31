@@ -1,9 +1,9 @@
 .splash {
-  background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)), url(https://cdn.dribbble.com/users/2117674/screenshots/6548074/final.gif);
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://cdn.dribbble.com/users/3435986/screenshots/6495629/trippy_helena_eternal.gif);
   width: 100vw;
   height: 100vh;
-  filter: grayscale(100%);
   background-size: cover;
+  background-position: center bottom -50px;
   color: white;
   text-align: center;
   h1 {
@@ -16,7 +16,7 @@
     border-width: 5px;
     margin-top: 0px;
     width: 50%;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   i {
     position: absolute;

@@ -1,0 +1,9 @@
+<% if current_user.wishlisted_item?(item) %>
+  <%= link_to wishlist_path(current_user.find_favorite(item)), method: :delete, remote: true do %>
+    <i class="fas fa-star"></i>
+  <% end %>
+<% else %>
+  <%= link_to item_wishlists_path(item),category: @category, method: :post, remote: true do %>
+    <i class="far fa-star"></i>
+  <% end %>
+<% end %>

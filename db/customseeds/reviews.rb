@@ -16,7 +16,7 @@ def random_user_id
   User.find(rand(User.count) + 1).id
 end
 
-PAST_BOOKINGS.count.times do |n|
+(PAST_BOOKINGS.count/2).times do |n|
   puts "Review created (#{n+1}/#{PAST_BOOKINGS.count}) #{((n+1).fdiv(PAST_BOOKINGS.count)*100).to_i}%"
   Review.create(
     booking_id: PAST_BOOKINGS[n][:id],

@@ -15,3 +15,12 @@
     }
   }
 }
+
+.my-menu h5.active {
+  font-weight: bold;
+  color: $light-blue;
+}
+
+.active-dash h5 {
+  color: $dark-blue;
+}

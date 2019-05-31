@@ -1,20 +1,60 @@
 <div class="container">
-  <h1><%= @search.capitalize %></h1>
-  <div class="row">
+  <br>
+  <h2><%= @search.capitalize %></h1>
+  <div class="d-flex flex-wrap justify-content-center">
     <% @items.each do |item| %>
-      <%= link_to item do %>
-        <div class="card mx-3" style="width: 200px">
-          <div class="card-title">
-            <%= item.name %>
+
+      <%= link_to item, class: "no-underline" do %>
+
+        <div class="card item-card card-hover" style="width: 20rem;">
+
+          <div style="position:relative" >
+            <%= cl_image_tag item.photo, class: "card-img-top" %>
+            <div class="category-tag mt-3" style="position: absolute; bottom: 5px; left: 5px;">
+              <h6 class="m-0 p-1"><%= item.category %></h6>
+            </div>
           </div>
-          <div class="card-body">
-            <%= cl_image_tag(item.photo, size: "160x160", alt: "#{item.name}") %>
-            <div class="div mt-3">
-              Daily Rate <strong>$<%= item.daily_rate %></strong>
+          <div class="d-flex justify-content-between p-2">
+            <div>
+              <h6 class="text-left text-muted"> <i class="fas fa-map-marker-alt"></i> <%= item.user.city %></h6>
+              <h5 class="text-left mt-2"><%= item.name %></h5>
+              <p class="text-left m-auto">$<%= item.daily_rate %> per day</p>
+            </div>
+            <div>
+              <% if user_signed_in? %>
+                <div class="star" id="<%= item.id %>">
+                  <%= render 'star_index', item: item %>
+                </div>
+              <% end %>
+              <!-- average star rating -->
+
+              <% if !item.reviews.empty? %>
+                <% total_stars = item.reviews.reduce(0) { |acc, review| acc += review.stars } %>
+                <% avg_stars = total_stars.fdiv(item.reviews.count) %>
+                <% avg_stars = (avg_stars * 2).round.fdiv(2).divmod(1) %>
+                <% full_stars = avg_stars.first %>
+                <% half_stars = avg_stars.last.round %>
+                <% empty_stars = Review::STARS.length - 1 - full_stars - half_stars %>
+                <div class="category-item-review-stars">
+                  <% full_stars.times do %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                  <% half_stars.times do %>
+                    <i class="fas fa-star-half-alt"></i>
+                  <% end %>
+                  <% empty_stars.times do %>
+                    <i class="far fa-star"></i>
+                  <% end %>
+                </div>
+              <% end %>
+
+              <!-- end star rating -->
+
             </div>
           </div>
         </div>
       <% end %>
+
     <% end %>
   </div>
 </div>

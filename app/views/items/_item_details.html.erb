@@ -1,5 +1,5 @@
 
-<div class="general-card item-main-card d-flex mr-0">
+<div class="general-card item-main-card d-flex mr-0 flex-fill mb-0">
   <div >
     <!-- Image -->
     <%= cl_image_tag(@item.photo, class: "mr-3") %>
@@ -33,7 +33,7 @@
     <div class="border border-dark rounded pt-3">
       <p>Posted: <%= @item.created_at.strftime("%d-%m-%Y") %></p>
     </div>
-    <div class="category-tag mt-3 <%= @item.category.parameterize %>-background">
+    <div class="category-tag my-5 text-center shadow-none <%= @item.category.parameterize %>-background">
       <%= @item.category %>
     </div>
   </div>

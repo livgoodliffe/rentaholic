@@ -3,7 +3,7 @@
     <i class="fas fa-star"></i>
   <% end %>
 <% else %>
-  <%= link_to item_wishlists_path(item),category: @category, method: :post, remote: true do %>
+  <%= link_to item_wishlists_path(item), method: :post, remote: true do %>
     <i class="far fa-star"></i>
   <% end %>
 <% end %>

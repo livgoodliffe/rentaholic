@@ -74,6 +74,8 @@
   right: 4px;
   font-size: 0.75rem;
   width: 7rem;
+  background-color: $dark-green;
+  border-color: $dark-green;
 }
 
 #review-modal-button-read {
@@ -82,7 +84,7 @@
   bottom: 4px;
   right: 4px;
   font-size: 0.75rem;
-  background-color: green;
+  background-color: $dark-blue;
   width: 7rem;
 }
 
@@ -92,8 +94,7 @@
 
 .review-stars {
   font-size: 1.25rem;
-  color: yellow;
-  text-shadow: 1px 1px 5px $dark-grey
+  color: $dark-blue;
 }
 
 .review-stars-footer {
@@ -108,8 +109,7 @@
   position: absolute;
   bottom: 0.25rem;
   left: 1.25rem;
-  color: yellow;
-  text-shadow: 1px 1px 5px $dark-grey;
+  color: $dark-blue;
   width: 80%;
   font-size: 0.75rem;
 }

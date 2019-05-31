@@ -170,6 +170,13 @@
   margin-bottom: 12px !important;
 }
 
+.category-item-review-stars {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0;
+  color: $dark-blue;
+}
+
 .item-review-stars {
   color: yellow;
   text-shadow: 1px 1px 5px $dark-grey;

@@ -1,12 +1,12 @@
 <div class="container">
   <%= link_to "", :back, class: "btn sticky-top m-3 fas fa-chevron-circle-left btn-back" %>
-  <div class="d-flex justify-content-space-between m-4">
-    <div >
-      <div class="m-2"><%= render 'item_details' %></div>
+  <div class="d-flex justify-content-space-between mt-3">
+    <div class="mt-2 col-8">
+      <%= render 'item_details' %>
     </div>
-    <div>
-      <div><%= render 'item_owner' %></div>
-      <div><%= render 'item_map' %></div>
+    <div class="col-4 ml-0 pl-0">
+      <%= render 'item_owner' %>
+      <%= render 'item_map' %>
     </div>
   </div>
   <div><%= render 'booking_calendar' %></div>

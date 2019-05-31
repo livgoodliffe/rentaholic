@@ -1,17 +1,15 @@
   <!-- Menu -->
-<div class="container-fluid">
-  <div class="row"> <!-- outer row that has the menu and the dash -->
-    <div class="col-sm-12 col-md-2">
-      <!-- content inside bootstrap grid -->
-      <div class="dash-container d-flex">
-        <div class="my-menu">
-          <%= render 'my_list', bookings: @bookings %>
-        </div>
-      </div>
-      <!-- end -->
+<div class="container-fluid m-5" style="max-width: 90vw">
+  <div class="d-flex">
+
+    <!-- Menu -->
+    <div class="my-menu general-card">
+      <%= render 'my_list', bookings: @bookings %>
     </div>
-    <div class="col-sm-12 col-md-10">
-      <div class="container-fluid">
+
+
+      <div class="container-fluid general-card p-3">
+
         <% if @dash_view == 'current' %>
           <%= render 'current_bookings' %>
         <% elsif @dash_view == 'past' %>
@@ -23,7 +21,8 @@
         <% else %>
           <%= render 'future_bookings', bookings: @bookings %>
         <% end %>
-      </div>
+
     </div>
+
   </div>
 </div>

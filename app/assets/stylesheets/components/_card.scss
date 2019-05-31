@@ -3,10 +3,11 @@
   margin: 16px;
   background-color: white;
   box-shadow: 5px 5px 5px $light-grey;
-  border-radius: 20px,
+  border-radius: 20px;
 }
 
 .card-hover {
+  text-decoration: none !important;
   &:hover {
   transform: scale(1.05);
   }

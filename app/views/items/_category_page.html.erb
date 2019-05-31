@@ -16,13 +16,13 @@
               <p class="text-left m-auto">$<%= item.daily_rate %> per day</p>
             </div>
             <div>
-
-              <div class="star" id="<%= item.id %>">
-                <%= render 'star_index', item: item %>
-              </div>
-
+              <% if user_signed_in? %>
+                <div class="star" id="<%= item.id %>">
+                  <%= render 'star_index', item: item %>
+                </div>
+              <% end %>
               <!-- average star rating -->
-
+              
               <% if !item.reviews.empty? %>
                 <% total_stars = item.reviews.reduce(0) { |acc, review| acc += review.stars } %>
                 <% avg_stars = total_stars.fdiv(item.reviews.count) %>

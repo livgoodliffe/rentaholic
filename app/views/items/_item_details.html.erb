@@ -10,7 +10,6 @@
       This item is mine
     <% else %>
       <button id="modal_button" type="button" class="btn btn-primary my-3" data-toggle="modal" data-target="#booking-modal" data-whatever="@fat">Rent <%= @item.user.first_name %>'s <%= @item.name %></button>
-      <br>
       <%= render 'bookings/modal_form', rate: @item.daily_rate %>
     <% end %>
   </div>
@@ -18,9 +17,12 @@
   <div>
 
     <!-- Wishlist -->
-    <div class="star" id="<%= @item.id %>">
-      <%= render 'star' %>
-    </div>
+    
+    <% if user_signed_in? %>
+      <div class="star" id="<%= @item.id %>">
+        <%= render 'star' %>
+      </div>
+    <% end %>
 
     <!-- Title -->
     <div class="d-flex justify-content-center m-3">
@@ -28,7 +30,7 @@
     </div>
     <p class="text-justify"><%= @item.description %></p>
     <!-- Further information -->
-    <div class="border border-dark rounded">
+    <div class="border border-dark rounded pt-3">
       <p>Posted: <%= @item.created_at.strftime("%d-%m-%Y") %></p>
     </div>
     <div class="category-tag mt-3 <%= @item.category.parameterize %>-background">

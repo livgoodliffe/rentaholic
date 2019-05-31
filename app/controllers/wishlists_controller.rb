@@ -7,16 +7,30 @@ class WishlistsController < ApplicationController
   end
 
   def create
-    @wishlist = Wishlist.new
-    @wishlist.user = current_user
-    @wishlist.item = Item.find(params[:item_id])
-    @wishlist.save
+    @item = Item.find(params[:item_id])
+    current_user.wishlists.create(item: @item)
+
+    respond_to do |format|
+      format.html { redirect_to @item }
+      format.js
+    end
+    # redirect_to items_path(category: params[:category])
+
+    # @wishlist = Wishlist.new
+    # @wishlist.user = current_user
+    # @wishlist.item = Item.find(params[:item_id])
+    # @wishlist.save
   end
 
   def destroy
-    @wishlist.destroy
+    wishlist = Wishlist.find(params[:id])
+    @item = wishlist.item
+    wishlist.destroy
 
-    redirect_to wishlists_path
+    respond_to do |format|
+      format.html { redirect_to @item }
+      format.js { render :create }
+    end
   end
 
   private

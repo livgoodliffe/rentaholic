@@ -22,6 +22,12 @@
   </div>
   <!-- Text -->
   <div>
+
+    <!-- Wishlist -->
+    <div class="star" id="<%= @item.id %>">
+      <%= render 'star' %>
+    </div>
+
     <!-- Title -->
     <div class="d-flex justify-content-center m-3">
       <h3><%= @item.name %></h3>

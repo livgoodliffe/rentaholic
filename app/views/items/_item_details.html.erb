@@ -1,3 +1,4 @@
+
 <div class="general-card item-main-card d-flex mr-0">
   <div >
     <!-- Image -->
@@ -14,12 +15,15 @@
   </div>
   <!-- Text -->
   <div>
+
     <!-- Wishlist -->
+    
     <% if user_signed_in? %>
       <div class="star" id="<%= @item.id %>">
         <%= render 'star' %>
       </div>
     <% end %>
+
     <!-- Title -->
     <div class="d-flex justify-content-center m-3">
       <h3><%= @item.name %></h3>

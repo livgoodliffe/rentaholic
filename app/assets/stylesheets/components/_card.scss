@@ -8,7 +8,7 @@
 
 .card-hover {
   &:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
   }
 }
 
@@ -24,19 +24,23 @@
   box-shadow: 5px 5px 5px $light-grey;
   border: 10px solid white;
   transition: all .2s ease-out;
+
   img {
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
     height: 150px;
     object-fit: cover;
   }
+
   a {
     color: black;
   }
+
   p {
     color: $dark-blue;
     font-weight: bold;
   }
+
   h6 {
     font-weight: light;
     font-size: 14px;
@@ -48,6 +52,7 @@
 .categories-group {
   display: flex;
   padding: 16px;
+
   a {
     text-decoration: none;
   }
@@ -67,6 +72,7 @@
       background: linear-gradient(100deg, $dark-blue, $light-blue);
       color: white;
     }
+
     h5 {
       opacity: 100;
     }
@@ -78,6 +84,7 @@
     background: linear-gradient(100deg, $dark-blue, $light-blue);
     color: white;
   }
+
   h5 {
     opacity: 100;
     color: white;
@@ -93,7 +100,7 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   margin: 10px;
 
   p {
@@ -156,16 +163,15 @@
 }
 
 .item-review-stars {
-  color: yellow;
-  text-shadow: 1px 1px 5px $dark-grey;
+  color: $dark-blue;
 }
 
 .item-review-content {
-  font-size: 2rem;
+  font-size: 1.25rem;
 }
 
 .item-review-renter {
-  font-size: 1.25rem;
+  font-size: 1.20rem;
 }
 
 .item-review-duration {

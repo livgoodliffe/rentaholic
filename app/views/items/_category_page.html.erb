@@ -1,7 +1,9 @@
 <div class="container">
   <div class="d-flex flex-wrap justify-content-center">
     <% @items.each do |item| %>
+
       <%= link_to item, class: "no-underline" do %>
+
         <div class="card item-card card-hover" style="width: 20rem;">
 
           <div style="position:relative" >
@@ -50,6 +52,7 @@
           </div>
         </div>
       <% end %>
+
     <% end %>
   </div>
 </div>

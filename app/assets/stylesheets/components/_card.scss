@@ -7,10 +7,13 @@
 }
 
 .card-hover {
-  text-decoration: none !important;
   &:hover {
   transform: scale(1.05);
   }
+}
+
+.no-underline {
+  text-decoration: none !important;
 }
 
 // small item card

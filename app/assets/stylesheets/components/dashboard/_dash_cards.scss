@@ -113,3 +113,13 @@
   width: 80%;
   font-size: 0.75rem;
 }
+
+.my-items-heading {
+  position: relative;
+
+  .my-items-add-item {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+}

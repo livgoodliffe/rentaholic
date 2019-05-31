@@ -5,9 +5,8 @@
       <h2>Wishlisted Items</h2>
     </div>
      <div class="list-channel d-flex flex-wrap">
-      <% @wishlists.each do |wishlist| %>
       <div class="list-channel d-flex flex-wrap justify-content-around">
-      <% bookings.each do |booking| %>
+      <% @wishlists.each do |wishlist| %>
         <div class="card-product m-3">
           <img src="<%= wishlist.item.photo %>">
           <div class="card-product-infos">
@@ -15,7 +14,7 @@
             <p><%= wishlist.item.description[0..100].ljust(105,".") %></p>
           </div>
         </div>
-        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

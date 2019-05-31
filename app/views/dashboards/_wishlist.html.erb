@@ -7,13 +7,15 @@
      <div class="list-channel d-flex flex-wrap">
       <div class="list-channel d-flex flex-wrap justify-content-around">
       <% @wishlists.each do |wishlist| %>
-        <div class="card-product m-3 card-hover">
-          <img src="<%= wishlist.item.photo %>">
-          <div class="card-product-infos">
-            <h2><%= wishlist.item.name %></h2>
-            <p><%= wishlist.item.description[0..100].ljust(105,".") %></p>
+        <%= link_to item_path(wishlist.item), class: "product-card-anchor" do %>
+          <div class="card-product m-3 card-hover">
+            <img src="<%= wishlist.item.photo %>">
+            <div class="card-product-infos">
+              <h2><%= wishlist.item.name %></h2>
+              <p><%= wishlist.item.description[0..100].ljust(105,".") %></p>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
     </div>
   </div>

@@ -18,7 +18,7 @@
               <p class="text-left m-auto">$<%= item.daily_rate %> per day</p>
             </div>
             <div>
-              <div class="star">
+              <div class="star" id="<%= item.id %>">
                 <%= render 'star_index', item: item %>
               </div>
               <!-- average star rating goes here -->

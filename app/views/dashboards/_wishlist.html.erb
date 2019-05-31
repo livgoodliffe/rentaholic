@@ -4,16 +4,21 @@
     <div class="heading">
       <h2>Wishlisted Items</h2>
     </div>
+<<<<<<< HEAD
+     <div class="list-channel d-flex flex-wrap">
+      <% @wishlists.each do |wishlist| %>
+=======
     <!--  <div class="list-channel d-flex flex-wrap justify-content-around">
       <%# bookings.each do |booking| %>
+>>>>>>> e95e6386a6e0e4e72e0790af453f4b458b3cd29f
         <div class="card-product m-3">
-          <img src="<%#= booking.item.photo %>">
+          <img src="<%= wishlist.item.photo %>">
           <div class="card-product-infos">
-            <h2><%#= booking.item.name %></h2>
-            <p><%#= booking.item.description[0..100].ljust(105,".") %></p>
+            <h2><%= wishlist.item.name %></h2>
+            <p><%= wishlist.item.description[0..100].ljust(105,".") %></p>
           </div>
         </div>
-        <%# end %>
-    </div> -->
+        <% end %>
+    </div>
   </div>
 </div>

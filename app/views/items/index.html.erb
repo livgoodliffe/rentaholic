@@ -1,3 +1,4 @@
+
 <%= render 'category_circles' %>
 
 
@@ -8,5 +9,12 @@
   <%= link_to "", items_path, class: "btn sticky-top m-3 fas fa-chevron-circle-left btn-back" %>
   <%= render 'category_page' %>
 <% else %>
-  <h4 class="m-6 text-center">Most popular items based on rating</h4>
+  <div class="intro-text">
+    <div class="m-3">
+      <h4>Choose a category to get started</h4>
+    </div>
+    <div>
+      <h2>Become a Rentaholic</h2>
+    </div>
+  </div>
 <% end %>

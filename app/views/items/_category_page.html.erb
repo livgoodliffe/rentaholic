@@ -18,6 +18,9 @@
               <p class="text-left m-auto">$<%= item.daily_rate %> per day</p>
             </div>
             <div>
+              <div class="star">
+                <%= render 'star_index', item: item %>
+              </div>
               <!-- average star rating goes here -->
               <% if !item.reviews.empty? %>
                 <% total_stars = item.reviews.reduce(0) { |acc, review| acc += review.stars } %>
@@ -39,11 +42,12 @@
                 </div>
               <% end %>
             </div>
-            <div>
-              <%= link_to item_wishlists_path(item), method: :post do %>
-                <i class="far fa-star ml-3 text-right" style="font-size: 20px;"></i>
-              <% end %>
-            </div>
+          </div>
+          <div>
+            <%= link_to item_wishlists_path(item), method: :post do %>
+              <i class="far fa-star ml-3 text-right" style="font-size: 20px;"></i>
+            <% end %>
+          </div>
           </div>
         </div>
       <% end %>

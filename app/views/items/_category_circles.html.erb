@@ -1,18 +1,25 @@
-<div class="container d-flex justify-content-center">
+<div class="medium-grey-banner">
 
-  <div class="categories-group">
+  <div class="container d-flex justify-content-center">
 
-    <% Item::CATEGORIES.each do |category| %>
-      <%= link_to controller: "items", category: category do %>
+    <div class="categories-group">
 
-        <div class="category-card <%= 'active' if params[:category] == category %>">
-          <div class="category-circle">
-            <p class="icon <%= category.parameterize %>-icon"></p>
+      <% Item::CATEGORIES.each do |category| %>
+        <%= link_to controller: "items", category: category do %>
+
+          <div class="category-card <%= 'active' if params[:category] == category %>">
+            <div class="category-circle">
+              <p class="icon <%= category.parameterize %>-icon"></p>
+            </div>
+            <h5><%= category %></h5>
           </div>
-          <h5><%= category %></h5>
-        </div>
 
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
+
+
+
 </div>
+

@@ -1,8 +1,9 @@
 <div class="container">
   <div class="d-flex flex-wrap justify-content-center">
     <% @items.each do |item| %>
-      <%= link_to item do %>
+      <%= link_to item, class: "no-underline" do %>
         <div class="card item-card card-hover" style="width: 20rem;">
+
           <div style="position:relative" >
             <%= cl_image_tag item.photo, class: "card-img-top" %>
             <div class="category-tag mt-3" style="position: absolute; bottom: 5px; left: 5px;">
@@ -16,11 +17,11 @@
               <p class="text-left m-auto">$<%= item.daily_rate %> per day</p>
             </div>
             <div>
-
-              <div class="star" id="<%= item.id %>">
-                <%= render 'star_index', item: item %>
-              </div>
-
+              <% if user_signed_in? %>
+                <div class="star" id="<%= item.id %>">
+                  <%= render 'star_index', item: item %>
+                </div>
+              <% end %>
               <!-- average star rating -->
 
               <% if !item.reviews.empty? %>

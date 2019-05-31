@@ -9,7 +9,8 @@
       <% @bookings.each do |booking| %>
         <%= link_to item_path(booking.item), class: "product-card-anchor" do %>
           <div class="card-product m-3">
-            <img src="<%= booking.item.photo %>">
+            <%= cl_image_tag(booking.item.photo) %>
+
             <div class="card-product-infos">
               <div class="d-flex justify-content-between">
                 <h2><%= booking.item.name %></h2>

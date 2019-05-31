@@ -1,27 +1,29 @@
 <div class="container booking-calendar general-card" id="booking-calendar">
-
-  <div class="row align-items-center justify-content-center">
-    <%= link_to 'Previous 7 Days', item_path(@item, weekstart: (@bookings_week[0][:date]-7.days).strftime('%Y-%m-%d'))+'#booking-calendar', class: 'btn btn-primary' %>
-    <%# byebug %>
-    <div class="main-title">Bookings</div>
-    <%= link_to 'Next 7 Days', item_path(@item, weekstart: (@bookings_week[0][:date]+7.days).strftime('%Y-%m-%d'))+'#booking-calendar', class: 'btn btn-primary' %>
-  </div>
-
-  <div class="row">
-    <div class="card-group">
-
-      <% @bookings_week.each do |key, value| %>
-        <div class="card <%= value[:available] ? 'item-available' : 'item-booked' %>">
-          <div class="card-title">
-            <div class="day-string"><%=value[:date].strftime("%A")%></div>
-            <div class="date-string"><%=value[:date].strftime("%d %b %Y") %></div>
-          </div>
-          <div class="card-body ">
-            <%= value[:available] ? 'Available' : 'Booked' %>
-          </div>
+  <div class="row align-items-center flex-column">
+    <div class="row justify-content-center align-items-center">
+      <div class="calendar-button">
+        <%= link_to '<', item_path(@item, month: (@bookings_month[0][:date]-1.month).strftime('%Y-%m'))+'#booking-calendar', class: 'btn btn-light text-primary mr-3' %>
+      </div>
+      <div class="main-title"><%= @bookings_month[0][:date].strftime('%B')%></div>
+      <div class="calendar-button">
+        <%= link_to '>', item_path(@item, month: (@bookings_month[0][:date]+1.month).strftime('%Y-%m'))+'#booking-calendar', class: 'btn btn-light text-primary ml-2' %>
+      </div>
+    </div>
+    <div class="grid-month-header-row mb-3">
+      <div class="day_label">S</div>
+      <div class="day_label">M</div>
+      <div class="day_label">T</div>
+      <div class="day_label">W</div>
+      <div class="day_label">T</div>
+      <div class="day_label">F</div>
+      <div class="day_label">S</div>
+    </div>
+    <div class="grid-month" data-offset="<%= @bookings_month[0][:date].wday %>">
+      <% @bookings_month.each do |key, value| %>
+        <div class="month-day <%= value[:available] ? 'item-available' : 'item-booked'%> d-flex justify-content-center align-items-center">
+          <div><%= key.to_i + 1 %></div>
         </div>
       <% end %>
-
     </div>
   </div>
 </div>

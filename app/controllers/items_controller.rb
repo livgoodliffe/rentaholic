@@ -36,8 +36,8 @@ class ItemsController < ApplicationController
 
     # booking code
     @booking = Booking.new
-    @bookings_week = {}
-    @booking_hash = create_booking_hash(params[:weekstart])
+    @bookings_month = {}
+    @booking_hash = create_booking_hash(params[:month])
 
     # geocoding
     @markers = [{ lng: @item.user.longitude, lat: @item.user.latitude }]
@@ -55,20 +55,23 @@ class ItemsController < ApplicationController
     true
   end
 
-  def create_booking_hash(week_start_date)
-    # in progress (will implement buttons later)
-    if week_start_date == nil
-      week_start_date = Date.today
+  def create_booking_hash(month_param)
+    today = Date.today
+    if month_param == nil
+      year = today.year
+      month = today.month
+      month_start = Date.new(year, month, 1)
     else
-      year = week_start_date[0..3].to_i
-      month = week_start_date[5..6].to_i
-      day = week_start_date[8..9].to_i
-      week_start_date = Date.new(year, month, day)
+      year = month_param[0..3].to_i
+      month = month_param[5..6].to_i
+      month_start = Date.new(year, month, 1)
     end
-    7.times do |n|
-      @bookings_week[n] = {
-        available: booking_availability(week_start_date + n.days),
-        date: week_start_date + n.days
+    last_day = month_start.end_of_month.day
+
+    (0..(last_day - 1)).each do |n|
+      @bookings_month[n] = {
+        available: booking_availability(month_start + n.days),
+        date: month_start + n.days
       }
     end
   end

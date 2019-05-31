@@ -5,7 +5,7 @@
 </div>
 
 
-<div class="list-channel d-flex flex-wrap">
+<div class="list-channel d-flex flex-wrap justify-content-around">
   <% @bookings = @bookings.sort_by { |booking| booking.end_date - Date.today } %>
   <% @bookings.each do |booking| %>
     <%= link_to item_path(booking.item), class: "product-card-anchor" do %>

@@ -2,7 +2,7 @@
 <div class="general-card item-main-card d-flex mr-0">
   <div >
     <!-- Image -->
-    <%= cl_image_tag(@item.photo, class: "mr-0") %>
+    <%= cl_image_tag(@item.photo, class: "mr-3") %>
     <!-- Price -->
     <h5>$<%= @item.daily_rate %> per day</h5>
     <!-- Rent this item -->
@@ -14,10 +14,10 @@
     <% end %>
   </div>
   <!-- Text -->
-  <div>
+  <div class="mx-3 mt-3">
 
     <!-- Wishlist -->
-    
+
     <% if user_signed_in? %>
       <div class="star" id="<%= @item.id %>">
         <%= render 'star' %>

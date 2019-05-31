@@ -2,3 +2,30 @@
   display: flex;
   justify-content: space-between;
 }
+
+.item-main-card {
+  position: relative;
+  img {
+    width: 300px;
+    height: 300px;
+    border-radius: 16px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+  }
+}
+
+.item-owner-card {
+  text-align: center;
+
+  img {
+    border-radius: 50%;
+    width: 100px;
+    margin: 8px;
+  }
+}
+
+.wishlist-star {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}

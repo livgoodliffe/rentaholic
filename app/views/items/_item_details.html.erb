@@ -1,4 +1,11 @@
 <div class="general-card item-main-card d-flex" style="width: 50vw">
+  <!-- Wishlist -->
+  <div class="wishlist-star">
+    <%= link_to new_wishlist_path(item: @item, user: current_user) do %>
+      <i class="far fa-star ml-3 sticky-top-right" style="font-size: 25px;"></i>
+    <% end %>
+  </div>
+
   <div >
     <!-- Image -->
       <%= cl_image_tag(@item.photo) %>
@@ -15,10 +22,6 @@
   </div>
   <!-- Text -->
   <div>
-    <!-- Wishlist -->
-    <%= link_to new_wishlist_path(item: @item, user: current_user) do %>
-      <i class="far fa-star ml-3 sticky-top-right" style="font-size: 20px;"></i>
-    <% end %>
     <!-- Title -->
     <div class="d-flex justify-content-center m-3">
       <h3><%= @item.name %></h3>

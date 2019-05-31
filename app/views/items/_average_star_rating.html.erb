@@ -1,0 +1,19 @@
+<% if !item.reviews.empty? %>
+  <% total_stars = item.reviews.reduce(0) { |acc, review| acc += review.stars } %>
+  <% avg_stars = total_stars.fdiv(item.reviews.count) %>
+  <% avg_stars = (avg_stars * 2).round.fdiv(2).divmod(1) %>
+  <% full_stars = avg_stars.first %>
+  <% half_stars = avg_stars.last.round %>
+  <% empty_stars = Review::STARS.length - 1 - full_stars - half_stars %>
+  <div class="category-item-review-stars">
+    <% full_stars.times do %>
+      <i class="fas fa-star"></i>
+    <% end %>
+    <% half_stars.times do %>
+      <i class="fas fa-star-half-alt"></i>
+    <% end %>
+    <% empty_stars.times do %>
+      <i class="far fa-star"></i>
+    <% end %>
+  </div>
+<% end %>

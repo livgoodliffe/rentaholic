@@ -1,9 +1,16 @@
 class DashboardsController < ApplicationController
   def show
+    @current_active = false
+    @past_active = false
+    @wishlist_active = false
+    @my_items_active = false
+
     if params[:booking_type] == 'current'
+      @current_active = true
       @dash_view = 'current'
       @bookings = current_bookings
     elsif params[:booking_type] == 'past'
+      @past_active = true
       @review = Review.new
       @dash_view = 'past'
       @bookings = past_bookings
@@ -19,7 +26,6 @@ class DashboardsController < ApplicationController
   end
 
   private
-
 
   def future_bookings
     current_user.bookings.select{|booking| booking.start_date > Date.today}

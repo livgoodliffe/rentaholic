@@ -19,7 +19,7 @@
     <!-- Wishlist -->
 
     <% if user_signed_in? %>
-      <div class="star" id="<%= @item.id %>">
+      <div class="item_star" id="<%= @item.id %>">
         <%= render 'star' %>
       </div>
     <% end %>

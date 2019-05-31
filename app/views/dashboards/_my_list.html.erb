@@ -1,30 +1,15 @@
-<ul>
-  <li>
-    <h1>Dashboard</h1>
-  </li>
-  <li>
-    <%= link_to dashboard_path(booking_type: "future")  do %>
-      <h3>Future Bookings</h3>
-    <% end %>
-  </li>
-  <li>
-    <%= link_to dashboard_path(booking_type: "current") do %>
-      <h3>Current Bookings</h3>
-    <% end %>
-  </li>
-  <li>
-    <%= link_to dashboard_path(booking_type: "past") do %>
-      <h3>Past Bookings</h3>
-    <% end %>
-  </li>
-  <li>
-    <%= link_to dashboard_path(booking_type: "wishlist") do %>
-      <h3>Wishlist</h3>
-    <% end %>
-  </li>
-  <li>
-    <%= link_to dashboard_path(booking_type: "my_items") do %>
-      <h3>My Items</h3>
-    <% end %>
-  </li>
-</ul>
+<%= link_to dashboard_path(booking_type: "future")  do %>
+  <h5>Future Bookings</h5>
+<% end %>
+<%= link_to dashboard_path(booking_type: "current") do %>
+  <h5>Current Bookings</h5>
+<% end %>
+<%= link_to dashboard_path(booking_type: "past") do %>
+  <h5>Past Bookings</h5>
+<% end %>
+<%= link_to dashboard_path(booking_type: "wishlist") do %>
+  <h5>Wishlist</h5>
+<% end %>
+<%= link_to dashboard_path(booking_type: "my_items") do %>
+  <h5>My Items</h5>
+<% end %>

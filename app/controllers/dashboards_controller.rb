@@ -9,6 +9,7 @@ class DashboardsController < ApplicationController
       @bookings = past_bookings
     elsif params[:booking_type] == 'wishlist'
       @dash_view = 'wishlist'
+
     elsif params[:booking_type] == 'my_items'
       @dash_view = 'my_items'
     else

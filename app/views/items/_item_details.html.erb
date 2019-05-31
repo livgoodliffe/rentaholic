@@ -1,7 +1,8 @@
-<div class="general-card item-main-card d-flex" style="width: 50vw">
+
+<div class="general-card item-main-card d-flex mr-0">
   <div >
     <!-- Image -->
-      <%= cl_image_tag(@item.photo) %>
+    <%= cl_image_tag(@item.photo, class: "mr-3") %>
     <!-- Price -->
     <h5>$<%= @item.daily_rate %> per day</h5>
     <!-- Rent this item -->
@@ -9,23 +10,27 @@
       This item is mine
     <% else %>
       <button id="modal_button" type="button" class="btn btn-primary my-3" data-toggle="modal" data-target="#booking-modal" data-whatever="@fat">Rent <%= @item.user.first_name %>'s <%= @item.name %></button>
-      <br>
       <%= render 'bookings/modal_form', rate: @item.daily_rate %>
     <% end %>
   </div>
   <!-- Text -->
-  <div>
+  <div class="mx-3 mt-3">
+
     <!-- Wishlist -->
-    <%= link_to new_wishlist_path(item: @item, user: current_user) do %>
-      <i class="far fa-star ml-3 sticky-top-right" style="font-size: 20px;"></i>
+
+    <% if user_signed_in? %>
+      <div class="star" id="<%= @item.id %>">
+        <%= render 'star' %>
+      </div>
     <% end %>
+
     <!-- Title -->
     <div class="d-flex justify-content-center m-3">
       <h3><%= @item.name %></h3>
     </div>
     <p class="text-justify"><%= @item.description %></p>
     <!-- Further information -->
-    <div class="border border-dark rounded">
+    <div class="border border-dark rounded pt-3">
       <p>Posted: <%= @item.created_at.strftime("%d-%m-%Y") %></p>
     </div>
     <div class="category-tag mt-3 <%= @item.category.parameterize %>-background">

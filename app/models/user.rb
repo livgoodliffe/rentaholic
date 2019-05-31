@@ -14,6 +14,14 @@ class User < ApplicationRecord
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_city?
 
+  def wishlisted_item?(item)
+    wishlists.where(item: item).any?
+  end
+
+  def find_favorite(item)
+    wishlists.where(item: item).first
+  end
+
   private
 
   def location

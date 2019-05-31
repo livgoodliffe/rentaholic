@@ -1,10 +1,10 @@
-export default () => {
-  $('#footer').hide();
+// export default () => {
+//   $('#footer').hide();
 
-  $(window).scroll(() => {
-    if ($(window).scrollTop() === $(document).height() - $(window).height()) {
-      $('#footer').show();
-    }
-  })
-}
+//   $(window).scroll(() => {
+//     if ($(window).scrollTop() === $(document).height() - $(window).height()) {
+//       $('#footer').show();
+//     }
+//   })
+// }
 

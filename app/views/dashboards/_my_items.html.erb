@@ -1,8 +1,9 @@
 <div class="row">
   <div class="col-sm">
     <!-- My Items -->
-    <div class="heading">
+    <div class="heading my-items-heading">
       <h2>My Items</h2>
+      <%= link_to "Add Item", new_item_path, class: " my-items-add-item btn btn-primary" %>
     </div>
     <div class="list-channel d-flex flex-wrap justify-content-around">
       <% current_user.items.each do |item| %>

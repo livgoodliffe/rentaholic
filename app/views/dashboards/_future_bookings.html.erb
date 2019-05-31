@@ -3,7 +3,7 @@
     <!-- My Items -->
     <div class="heading">
       <h2>Future Bookings</h2>
-    </div> card-hover
+    </div>
     <div class="list-channel d-flex flex-wrap justify-content-around">
       <% @bookings = @bookings.sort_by {|booking| booking.start_date - Date.today } %>
       <% @bookings.each do |booking| %>

@@ -1,48 +1,50 @@
-<div class="container general-card" >
-  <div class="item-review-title">
-    <h2>Reviews</h2>
-  </div>
-  <div class="row align-items-center justify-content-center">
-    <% @item.reviews.each do |review| %>
-      <% booking = review.booking %>
-      <% item = booking.item %>
-      <% renter = booking.user %>
-      <% days = (booking.end_date - booking.start_date).to_i %>
-      <% start_date = booking.start_date.strftime("%a %d %b %Y") %>
-      <% end_date = booking.end_date.strftime("%a %d %b %Y") %>
-      <% full_stars = review.stars %>
-      <% empty_stars = Review::STARS.length - 1 - full_stars %>
-      <% content = review.content %>
-      <div class="card mx-3">
-        <div class="card-title">
+<% if !@item.reviews.empty? %>
+  <div class="container general-card" >
+    <div class="item-review-title">
+      <h2>Reviews</h2>
+    </div>
+    <div class="row align-items-center justify-content-center">
+      <% @item.reviews.each do |review| %>
+        <% booking = review.booking %>
+        <% item = booking.item %>
+        <% renter = booking.user %>
+        <% days = (booking.end_date - booking.start_date).to_i %>
+        <% start_date = booking.start_date.strftime("%a %d %b %Y") %>
+        <% end_date = booking.end_date.strftime("%a %d %b %Y") %>
+        <% full_stars = review.stars %>
+        <% empty_stars = Review::STARS.length - 1 - full_stars %>
+        <% content = review.content %>
+        <div class="card mx-3">
+          <div class="card-title">
+          </div>
+          <div class="card-body">
+            <div class="row justify-content-center">
+              <div class="item-review-content mb-3">
+                <%= content %>
+              </div>
+            </div>
+            <div class="item-review-stars mb-2">
+              <% full_stars.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
+              <% empty_stars.times do %>
+                <i class="far fa-star"></i>
+              <% end %>
+            </div>
+            <div class="item-review-renter">
+              <%= renter.first_name %>
+            </div>
+            <div class="item-review-duration">
+              <div>
+                <%= item.name %> rentaholic for <%= pluralize(days, 'day') %>
+              </div>
+              <div>
+                <!-- <%#= start_date%> to <%#= end_date %> -->
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="card-body">
-          <div class="row justify-content-center">
-            <div class="item-review-content mb-3">
-              <%= content %>
-            </div>
-          </div>
-          <div class="item-review-stars mb-2">
-            <% full_stars.times do %>
-              <i class="fas fa-star"></i>
-            <% end %>
-            <% empty_stars.times do %>
-              <i class="far fa-star"></i>
-            <% end %>
-          </div>
-          <div class="item-review-renter">
-            <%= renter.first_name %>
-          </div>
-          <div class="item-review-duration">
-            <div>
-              <%= item.name %> rentaholic for <%= pluralize(days, 'day') %>
-            </div>
-            <div>
-              <!-- <%#= start_date%> to <%#= end_date %> -->
-            </div>
-          </div>
-        </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
+<% end %>

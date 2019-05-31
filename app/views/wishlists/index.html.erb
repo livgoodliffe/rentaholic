@@ -1,7 +1,7 @@
 <%= link_to "", :back, class: "btn sticky-top m-3 fas fa-chevron-circle-left btn-back" %>
 <div class="container">
   <h1 class="mt-3">Wishlist</h1>
-  <div class="d-flex justify-content-around mt-3">
+  <div class="d-flex justify-content-around mt-3 flex-wrap">
     <% @wishlist.each do |wishlist| %>
       <div class="card mb-3 pt-3 pl-3 pb-3" style="max-width: 400px;">
         <div class="row no-gutters">

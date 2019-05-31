@@ -1,10 +1,17 @@
 .dash-container {
   max-width: 100%;
 }
+
 .my-menu {
-  margin-left: 20px;
-  margin-right: 20px;
-  ul {
-    list-style: none;
+  width: 250px;
+  text-decoration: none;
+  margin: 16px;
+  h5 {
+    color: $dark-grey;
+    margin: 15px;
+    &:hover {
+      font-weight: bold;
+      color: $light-blue;
+    }
   }
 }

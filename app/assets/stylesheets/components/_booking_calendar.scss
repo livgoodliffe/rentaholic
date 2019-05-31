@@ -1,6 +1,11 @@
 .booking-calendar {
   margin-bottom: 5rem;
 
+  a {
+    font-size: 1.5rem;
+    background: white;
+  }
+
   .main-title {
     margin-top: 1.5rem;
     margin-bottom: 2rem;
@@ -8,40 +13,61 @@
     font-weight: bold;
   }
 
-  .card {
-    height: 10rem;
-    flex-grow: 1;
-    flex-basis: 10%;
-  }
+  .grid-month-header-row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-flow: dense;
+    grid-gap: 18px 8px;
+    border-bottom: 1px solid $light-grey;
 
-  .card-title {
-    font-weight: bold;
-  }
-
-  .card-body {
-    white-space: nowrap;
-  }
-
-  .item-available {
-    background-color: rgba(0, 255, 0, 0.5);
-  }
-
-  .item-booked {
-    background-color: rgba(255, 0, 0, 0.5)
-  }
-
-  .date-string {
-    font-size: 0.75rem;
-  }
-
-  .btn {
-    height: 2.5rem;
-    margin: 0 1rem;
-
-    width: 10rem;
-
-    div {
-      display: inline-block;
+    .day_label {
+      height: 36px;
+      width: 36px;
+      padding: 0;
+      border: 0;
+      font-size: 1.2rem;
+      text-align: center;
     }
   }
+
+  .grid-month {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-auto-flow: dense;
+    grid-gap: 18px 8px;
+  }
+
+  .month-day {
+    height: 36px;
+    width: 36px;
+    padding: 0;
+    border: 0;
+    font-size: 0.8rem;
+
+    &.item-booked {
+      color: white;
+      text-align: center;
+      background-color: $light-blue;
+      border-radius: 50%;
+    }
+  }
+
+
+
+  .calendar-button {
+    width: 50px;
+  }
+
+  // .btn {
+  //   height: 2.5rem;
+  //   margin: 0 1rem;
+
+  //   width: 10rem;
+
+  //   div {
+  //     display: inline-block;
+  //   }
+  // }
+
 }

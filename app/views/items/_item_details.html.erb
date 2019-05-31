@@ -1,7 +1,7 @@
-<div class="general-card item-main-card d-flex" style="width: 50vw">
+<div class="general-card item-main-card d-flex mr-0">
   <div >
     <!-- Image -->
-      <%= cl_image_tag(@item.photo) %>
+    <%= cl_image_tag(@item.photo, class: "mr-0") %>
     <!-- Price -->
     <h5>$<%= @item.daily_rate %> per day</h5>
     <!-- Rent this item -->

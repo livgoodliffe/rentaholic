@@ -9,7 +9,7 @@
   <% @bookings = @bookings.sort_by { |booking| booking.end_date - Date.today } %>
   <% @bookings.each do |booking| %>
     <%= link_to item_path(booking.item), class: "product-card-anchor" do %>
-      <div class="card-product m-3">
+      <div class="card-product m-3 card-hover">
         <img src="<%= booking.item.photo %>">
         <div class="card-product-infos">
           <h2><%= booking.item.name %></h2>

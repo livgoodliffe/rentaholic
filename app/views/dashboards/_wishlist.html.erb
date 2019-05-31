@@ -7,7 +7,7 @@
      <div class="list-channel d-flex flex-wrap">
       <div class="list-channel d-flex flex-wrap justify-content-around">
       <% @wishlists.each do |wishlist| %>
-        <div class="card-product m-3">
+        <div class="card-product m-3 card-hover">
           <img src="<%= wishlist.item.photo %>">
           <div class="card-product-infos">
             <h2><%= wishlist.item.name %></h2>

@@ -1,2 +1,2 @@
-var itemStar = document.querySelector('.star');
+var itemStar = document.getElementById("<%= @item.id %>");
 itemStar.innerHTML = '<%= j render "items/star" %>'

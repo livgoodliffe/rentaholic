@@ -1,3 +1,17 @@
+.general-card {
+  padding: 16px;
+  margin: 16px;
+  background-color: white;
+  box-shadow: 5px 5px 5px $light-grey;
+  border-radius: 20px,
+}
+
+.card-hover {
+  &:hover {
+  transform: scale(1.05);
+  }
+}
+
 // small item card
 
 .item-card {
@@ -6,43 +20,23 @@
   box-shadow: 5px 5px 5px $light-grey;
   border: 10px solid white;
   transition: all .5s ease-out;
-
   img {
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
     height: 150px;
     object-fit: cover;
   }
-
   a {
     color: black;
   }
-
-  &:hover {
-    z-index: 100;
-    transform: scale(1.1);
-  }
-
   p {
     color: $dark-blue;
     font-weight: bold;
   }
-
   h6 {
     font-weight: light;
     font-size: 14px;
   }
-}
-
-
-// item show page
-
-.general-card {
-  padding: 16px;
-  margin: 16px;
-  background-color: white;
-  box-shadow: 5px 5px 5px $light-grey;
-  border-radius: 20px,
 }
 
 // circle categories
